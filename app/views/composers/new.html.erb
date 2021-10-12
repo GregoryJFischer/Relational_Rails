@@ -2,3 +2,17 @@
 
 <a href="/">Home</a><br/>
 <a href="/composers/">Composers Index</a><br/>
+
+<form method="post" action="/songs">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <h4>Enter a New Composer</h4>
+  <p>Name:</p>
+  <input type="text" name='composer[name]'/><br/>
+  <p>Nationality:</p>
+  <input type="text" name='composer[nationality]'/><br/>
+  <p>Is Active?</p>
+  <input type="text" name='composer[active]'/><br/>
+  <p>Total Songs:</p>
+  <input type="text" name='composer[total_songs]'/><br/><br/>
+  <input type='submit'/>
+</form>
