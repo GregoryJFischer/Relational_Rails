@@ -15,8 +15,8 @@ class SongsController < ApplicationController
       updated_at: time.now
       })
 
-      song.save
+    song.save
 
-      redirect_to '/songs'
+    redirect_to '/songs'
   end
 end

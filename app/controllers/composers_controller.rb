@@ -15,8 +15,8 @@ class ComposersController < ApplicationController
       updated_at: time.now
       })
 
-      composer.save
+    composer.save
 
-      redirect_to '/composers'
+    redirect_to '/composers'
   end
 end

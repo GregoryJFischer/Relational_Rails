@@ -15,8 +15,8 @@ class MusiciansController < ApplicationController
       updated_at: time.now
       })
 
-      musician.save
+    musician.save
 
-      redirect_to '/musicians'
+    redirect_to '/musicians'
   end
 end
