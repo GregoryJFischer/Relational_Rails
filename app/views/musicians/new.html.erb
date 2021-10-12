@@ -2,3 +2,17 @@
 
 <a href="/">Home</a><br/>
 <a href="/musicians/">Musicians Index</a><br/>
+
+<form method="post" action="/musicians">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <h4>Enter a New Musician</h4>
+  <p>Orchestra ID:</p>
+  <input type="text" name='musician[orc_id]'/><br/>
+  <p>Name:</p>
+  <input type="text" name='musician[name]'/><br/>
+  <p>Is Looking for Work?</p>
+  <input type="text" name='musician[hirable]'/><br/>
+  <p>Age:</p>
+  <input type="text" name='musician[age]'/><br/><br/>
+  <input type='submit'/>
+</form>
