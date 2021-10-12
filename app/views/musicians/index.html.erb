@@ -2,4 +2,10 @@
 
 <a href="/">Home</a>
 
-<a href="/musicians/new">New Musician</a>
+<span> |</span>
+
+<a href="/musicians/new">New Musician</a><br/><br/>
+
+<% @musicians.each do |musician| %>
+  <a href="/musicians/<%= musician.id %>"><%= musician.name %></a><br/><br/>
+<% end %>
