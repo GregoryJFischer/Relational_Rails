@@ -2,4 +2,10 @@
 
 <a href="/">Home</a>
 
-<a href="/orchestras/new">New Orchestra</a>
+<span> |</span>
+
+<a href="/orchestras/new">New Orchestra</a><br/><br/>
+
+<% @orchestras.each do |orchestra| %>
+  <a href="/orchestras/<%=orchestra.id%>"><%=orchestra.name%></a><br/><br/>
+<% end %>
