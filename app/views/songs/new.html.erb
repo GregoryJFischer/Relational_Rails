@@ -2,3 +2,17 @@
 
 <a href="/">Home</a><br/>
 <a href="/songs/">Songs Index</a><br/>
+
+<form method="post" action="/songs">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <h4>Enter a New Song</h4>
+  <p>Composer ID:</p>
+  <input type="text" name='song[composer_id]'/><br/>
+  <p>Name:</p>
+  <input type="text" name='song[name]'/><br/>
+  <p>Is Public Domain?</p>
+  <input type="text" name='song[public_domain]'/><br/>
+  <p>Year Composed:</p>
+  <input type="text" name='song[year_composed]'/><br/><br/>
+  <input type='submit'/>
+</form>
