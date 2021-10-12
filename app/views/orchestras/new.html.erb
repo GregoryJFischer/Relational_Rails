@@ -2,3 +2,15 @@
 
 <a href="/">Home</a><br/>
 <a href="/orchestras/">Orchestras Index</a><br/>
+
+<form method="post" action="/orchestras">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <h4>Enter a New Orchestra</h4>
+  <p>Name:</p>
+  <input type="text" name='orchestra[name]'/><br/>
+  <p>Is Hiring?</p>
+  <input type="text" name='orchestra[hiring]'/><br/>
+  <p>Max Number of Musicians:</p>
+  <input type="text" name='orchestra[max_musicians]'/><br/><br/>
+  <input type='submit'/>
+</form>
