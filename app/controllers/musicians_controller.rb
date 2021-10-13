@@ -11,12 +11,16 @@ class MusiciansController < ApplicationController
       name: params[:musician][:name],
       hirable: params[:musician][:hirable],
       age: params[:musician][:age],
-      created_at: Time.now,
-      updated_at: Time.now
+      created_at: time.now,
+      updated_at: time.now
       })
 
     musician.save
 
     redirect_to '/musicians'
+  end
+
+  def show
+    @musician = Musician.find(params[:id])
   end
 end
