@@ -36,7 +36,6 @@ class MusiciansController < ApplicationController
       name: params[:musician][:name],
       hirable: params[:musician][:hirable],
       age: params[:musician][:age],
-      created_at: Time.now,
       updated_at: Time.now
       })
 

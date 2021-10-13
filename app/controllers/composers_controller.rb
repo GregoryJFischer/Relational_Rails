@@ -36,7 +36,6 @@ class ComposersController < ApplicationController
       nationality: params[:composer][:nationality],
       active: params[:composer][:active],
       total_songs: params[:composer][:total_songs],
-      created_at: Time.now,
       updated_at: Time.now
       })
 
