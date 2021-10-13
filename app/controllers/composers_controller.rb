@@ -11,12 +11,16 @@ class ComposersController < ApplicationController
       nationality: params[:composer][:nationality],
       active: params[:composer][:active],
       total_songs: params[:composer][:total_songs],
-      created_at: Time.now,
-      updated_at: Time.now
+      created_at: time.now,
+      updated_at: time.now
       })
 
     composer.save
 
     redirect_to '/composers'
+  end
+
+  def show
+    @composer = Composer.find(params[:id])
   end
 end
