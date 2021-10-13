@@ -23,4 +23,8 @@ class ComposersController < ApplicationController
   def show
     @composer = Composer.find(params[:id])
   end
+
+  def edit
+    @composer = Composer.find(params[:id])
+  end
 end
