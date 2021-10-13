@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_10_12_212013) do
   end
 
   create_table "musicians", force: :cascade do |t|
-    t.integer "orc_id"
+    t.integer "orchestra_id"
     t.string "name"
     t.boolean "hirable"
     t.integer "age"
