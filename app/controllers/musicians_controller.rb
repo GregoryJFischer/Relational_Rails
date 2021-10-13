@@ -12,8 +12,8 @@ class MusiciansController < ApplicationController
       name: params[:musician][:name],
       hirable: params[:musician][:hirable],
       age: params[:musician][:age],
-      created_at: time.now,
-      updated_at: time.now
+      created_at: Time.now,
+      updated_at: Time.now
       })
 
     musician.save
@@ -36,8 +36,8 @@ class MusiciansController < ApplicationController
       name: params[:musician][:name],
       hirable: params[:musician][:hirable],
       age: params[:musician][:age],
-      created_at: time.now,
-      updated_at: time.now
+      created_at: Time.now,
+      updated_at: Time.now
       })
 
     musician.save

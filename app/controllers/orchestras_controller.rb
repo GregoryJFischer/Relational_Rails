@@ -12,8 +12,8 @@ class OrchestrasController < ApplicationController
       city: params[:orchestra][:city],
       hiring: params[:orchestra][:hiring],
       max_musicians: params[:orchestra][:max_musicians],
-      created_at: time.now,
-      updated_at: time.now
+      created_at: Time.now,
+      updated_at: Time.now
       })
 
     orchestra.save
@@ -36,8 +36,8 @@ class OrchestrasController < ApplicationController
       city: params[:orchestra][:city],
       hiring: params[:orchestra][:hiring],
       max_musicians: params[:orchestra][:max_musicians],
-      created_at: time.now,
-      updated_at: time.now
+      created_at: Time.now,
+      updated_at: Time.now
       })
 
     orchestra.save

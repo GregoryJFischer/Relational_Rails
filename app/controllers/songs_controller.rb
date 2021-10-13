@@ -12,8 +12,8 @@ class SongsController < ApplicationController
       name: params[:song][:name],
       public_domain: params[:song][:public_domain],
       year_composed: params[:song][:year_composed],
-      created_at: time.now,
-      updated_at: time.now
+      created_at: Time.now,
+      updated_at: Time.now
       })
 
     song.save
@@ -36,8 +36,8 @@ class SongsController < ApplicationController
       name: params[:song][:name],
       public_domain: params[:song][:public_domain],
       year_composed: params[:song][:year_composed],
-      created_at: time.now,
-      updated_at: time.now
+      created_at: Time.now,
+      updated_at: Time.now
       })
 
     song.save
