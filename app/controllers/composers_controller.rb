@@ -27,4 +27,19 @@ class ComposersController < ApplicationController
   def edit
     @composer = Composer.find(params[:id])
   end
+
+  def update
+    composer = Composer.find(params[:id])
+    composer.update({
+      name: params[:composer][:name],
+      nationality: params[:composer][:nationality],
+      active: params[:composer][:active],
+      total_songs: params[:composer][:total_songs],
+      created_at: time.now,
+      updated_at: time.now
+      })
+
+    composer.save
+    redirect_to "/coposers/#{composer.id}"
+  end
 end
