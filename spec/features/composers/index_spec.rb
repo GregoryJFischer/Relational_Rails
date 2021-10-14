@@ -29,6 +29,5 @@ RSpec.describe 'Composers Index' do
     visit "/composers/"
 
     expect(page).to have_content("New Composer")
-  end 
-
+  end
 end

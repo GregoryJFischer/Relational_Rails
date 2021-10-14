@@ -18,4 +18,16 @@ RSpec.describe 'Orchestras Index' do
     expect(page).to have_content(@orchestra_1.name)
     expect(page).to have_content(@orchestra_2.name)
   end
+
+  it '#home' do
+    visit "/orchestras/"
+
+    expect(page).to have_content("Home")
+  end
+
+  it '#new' do
+    visit "/orchestras/"
+
+    expect(page).to have_content("New Orchestra")
+  end
 end
