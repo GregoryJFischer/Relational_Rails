@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-10-14T16:54:28-04:00">2021-10-14T16:54:28-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-10-14T16:55:39-04:00">2021-10-14T16:55:39-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="yellow">
-  82.1%
+  83.66%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.91
+         0.95
        </span>
     </span> hits/line
     )
@@ -44,10 +44,10 @@
 
   <div class="t-line-summary">
     <b>257</b> relevant lines,
-    <span class="green"><b>211</b> lines covered</span> and
-    <span class="red"><b>46</b> lines missed. </span>
+    <span class="green"><b>215</b> lines covered</span> and
+    <span class="red"><b>42</b> lines missed. </span>
     (<span class="yellow">
-  82.1%
+  83.66%
 </span>
 )
   </div>
@@ -110,7 +110,7 @@
             <td class="cell--number">20</td>
             <td class="cell--number">10</td>
             <td class="cell--number">10</td>
-            <td class="cell--number">0.75</td>
+            <td class="cell--number">0.85</td>
             
           </tr>
         
@@ -424,12 +424,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#265b1e33b7085f30f39225b33dd42fc627cbd2cd" class="src_link" title="spec/features/orchestras/show_spec.rb">spec/features/orchestras/show_spec.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">84.00 %</td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">46</td>
             <td class="cell--number">25</td>
-            <td class="cell--number">21</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">25</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.24</td>
             
           </tr>
         
@@ -2033,8 +2033,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="25">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="8" data-linenumber="25">
+            <span class="hits">8</span>
             
 
             
@@ -7551,8 +7551,8 @@
   <div class="header">
     <h3>spec/features/orchestras/show_spec.rb</h3>
     <h4>
-      <span class="yellow">
-  84.0%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -7562,8 +7562,8 @@
 
     <div class="t-line-summary">
       <b>25</b> relevant lines.
-      <span class="green"><b>21</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="green"><b>25</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -7618,8 +7618,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="5">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="4" data-linenumber="5">
+            <span class="hits">4</span>
             
 
             
@@ -7662,8 +7662,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="9">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="4" data-linenumber="9">
+            <span class="hits">4</span>
             
 
             
@@ -7998,29 +7998,29 @@
 
             
 
-            <code class="ruby">  xit &#39;displays total songs&#39; do</code>
+            <code class="ruby">  it &#39;displays hiring&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="40">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="40">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    visit &quot;/composers/#{@composer_1.id}&quot;</code>
+            
+
+            <code class="ruby">    visit &quot;/orchestras/#{@orchestra_1.id}&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="41">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="41">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    expect(page).to have_content(&quot;Total Songs: #{@composer_1.total_songs}&quot;)</code>
+            
+
+            <code class="ruby">    expect(page).to have_content(&quot;Is currently hiring: #{@orchestra_1.hiring}&quot;)</code>
           </li>
         </div>
       
@@ -8036,24 +8036,24 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="43">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="43">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    visit &quot;/composers/#{@composer_2.id}&quot;</code>
+            
+
+            <code class="ruby">    visit &quot;/orchestras/#{@orchestra_2.id}&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="44">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="44">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    expect(page).to have_content(&quot;Total Songs: #{@composer_2.total_songs}&quot;)</code>
+            
+
+            <code class="ruby">    expect(page).to have_content(&quot;Is currently hiring: #{@orchestra_2.hiring}&quot;)</code>
           </li>
         </div>
       

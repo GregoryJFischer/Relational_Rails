@@ -36,11 +36,11 @@ RSpec.describe 'the orchestras show page' do
     expect(page).to have_content("Maximum Number of Musicians: #{@orchestra_2.max_musicians}")
   end
 
-  xit 'displays total songs' do
-    visit "/composers/#{@composer_1.id}"
-    expect(page).to have_content("Total Songs: #{@composer_1.total_songs}")
+  it 'displays hiring' do
+    visit "/orchestras/#{@orchestra_1.id}"
+    expect(page).to have_content("Is currently hiring: #{@orchestra_1.hiring}")
 
-    visit "/composers/#{@composer_2.id}"
-    expect(page).to have_content("Total Songs: #{@composer_2.total_songs}")
+    visit "/orchestras/#{@orchestra_2.id}"
+    expect(page).to have_content("Is currently hiring: #{@orchestra_2.hiring}")
   end
 end
