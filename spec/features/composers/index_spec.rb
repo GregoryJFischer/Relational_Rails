@@ -18,4 +18,17 @@ RSpec.describe 'Composers Index' do
     expect(page).to have_content(@composer_1.name)
     expect(page).to have_content(@composer_2.name)
   end
+
+  it '#home' do
+    visit "/composers/"
+
+    expect(page).to have_content("Home")
+  end
+
+  it '#new' do
+    visit "/composers/"
+
+    expect(page).to have_content("New Composer")
+  end 
+
 end
