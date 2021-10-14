@@ -24,12 +24,12 @@ RSpec.describe 'the orchestras show page' do
     expect(page).to have_content(@song_2.name)
   end
 
-  xit 'displays location' do
-    visit "/orchestras/#{@orchestra_1.id}"
-    expect(page).to have_content("Location: #{@orchestra_1.city}")
+  it 'displays public domain' do
+    visit "/songs/#{@song_1.id}"
+    expect(page).to have_content("Is public_domain: #{@song_1.public_domain}")
 
-    visit "/orchestras/#{@orchestra_2.id}"
-    expect(page).to have_content("Location: #{@orchestra_2.city}")
+    visit "/songs/#{@song_2.id}"
+    expect(page).to have_content("Is public_domain: #{@song_2.public_domain}")
   end
 
   xit 'displays the max musicians' do
