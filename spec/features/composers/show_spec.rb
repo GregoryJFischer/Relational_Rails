@@ -20,6 +20,14 @@ RSpec.describe 'the composers show page' do
     expect(page).to have_content(@composer_2.name)
   end
 
+  it 'displays composer status' do
+    visit "/composers/#{@composer_1.id}"
+    expect(page).to have_content("Is currently active: #{@composer_1.active}")
+
+    visit "/composers/#{@composer_2.id}"
+    expect(page).to have_content("Is currently active: #{@composer_2.active}")
+  end
+
   it 'displays the composer nationality' do
     visit "/composers/#{@composer_1.id}"
     expect(page).to have_content("Nationality: #{@composer_1.nationality}")
