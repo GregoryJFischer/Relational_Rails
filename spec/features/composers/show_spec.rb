@@ -13,11 +13,18 @@ RSpec.describe 'the composers show page' do
   end
 
   it 'displays the composer name' do
-
     visit "/composers/#{@composer_1.id}"
     expect(page).to have_content(@composer_1.name)
 
     visit "/composers/#{@composer_2.id}"
     expect(page).to have_content(@composer_2.name)
+  end
+
+  it 'displays the composer nationality' do
+    visit "/composers/#{@composer_1.id}"
+    expect(page).to have_content("Nationality: #{@composer_1.nationality}")
+
+    visit "/composers/#{@composer_2.id}"
+    expect(page).to have_content("Nationality: #{@composer_2.nationality}")
   end
 end
