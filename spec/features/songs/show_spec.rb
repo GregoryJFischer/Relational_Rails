@@ -39,4 +39,14 @@ RSpec.describe 'the orchestras show page' do
     visit "/songs/#{@song_2.id}"
     expect(page).to have_content("Composed in: #{@song_2.year_composed}")
   end
+
+  it 'nav' do
+    visit "/songs/#{@song_1.id}"
+
+    expect(page).to have_link("Home")
+    expect(page).to have_link("Orchestras")
+    expect(page).to have_link("Musicians")
+    expect(page).to have_link("Composers")
+    expect(page).to have_link("Songs")
+  end
 end
