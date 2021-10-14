@@ -285,6 +285,64 @@
           null
         ]
       },
+      "/Users/lesleysanders/turing/2module/Relational_Rails/spec/features/musicians/new_spec.rb": {
+        "lines": [
+
+        ]
+      },
+      "/Users/lesleysanders/turing/2module/Relational_Rails/spec/features/musicians/show_spec.rb": {
+        "lines": [
+
+        ]
+      },
+      "/Users/lesleysanders/turing/2module/Relational_Rails/spec/features/orchestras/index_spec.rb": {
+        "lines": [
+
+        ]
+      },
+      "/Users/lesleysanders/turing/2module/Relational_Rails/spec/features/orchestras/new_spec.rb": {
+        "lines": [
+
+        ]
+      },
+      "/Users/lesleysanders/turing/2module/Relational_Rails/spec/features/orchestras/show_spec.rb": {
+        "lines": [
+
+        ]
+      },
+      "/Users/lesleysanders/turing/2module/Relational_Rails/spec/features/songs/index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/lesleysanders/turing/2module/Relational_Rails/spec/features/songs/new_spec.rb": {
         "lines": [
 
@@ -336,6 +394,84 @@
       "/Users/lesleysanders/turing/2module/Relational_Rails/spec/models/song_spec.rb": {
         "lines": [
 
+        ]
+      },
+      "/Users/lesleysanders/turing/2module/Relational_Rails/app/models/orchestra.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/lesleysanders/turing/2module/Relational_Rails/app/models/musician.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/lesleysanders/turing/2module/Relational_Rails/app/controllers/musicians_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/lesleysanders/turing/2module/Relational_Rails/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
         ]
       },
       "/Users/lesleysanders/turing/2module/Relational_Rails/app/models/song.rb": {
@@ -400,14 +536,8 @@
           null,
           null
         ]
-      },
-      "/Users/lesleysanders/turing/2module/Relational_Rails/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1634239303
+    "timestamp": 1634240247
   }
 }
