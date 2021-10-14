@@ -35,4 +35,12 @@ RSpec.describe 'the composers show page' do
     visit "/composers/#{@composer_2.id}"
     expect(page).to have_content("Nationality: #{@composer_2.nationality}")
   end
+
+  it 'displays total songs' do
+    visit "/composers/#{@composer_1.id}"
+    expect(page).to have_content("Total Songs: #{@composer_1.total_songs}")
+
+    visit "/composers/#{@composer_2.id}"
+    expect(page).to have_content("Total Songs: #{@composer_2.total_songs}")
+  end
 end
