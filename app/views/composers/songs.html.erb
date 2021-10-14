@@ -1,0 +1,9 @@
+<h1>Songs written by <%=@composer.name%></h1>
+
+<% @composer.songs.each do |song| %>
+  <a href="/songs/<%= song.id %>"><%= song.name %></a><br/>
+  <ul>
+    <li>Is public_domain: <%= song.public_domain %></li>
+    <li>Composed in: <%= song.year_composed %></li>
+  </ul><br/><br/>
+<% end %>
