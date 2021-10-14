@@ -24,12 +24,12 @@ RSpec.describe 'the musicians show page' do
     expect(page).to have_content(@musician_2.name)
   end
 
-  xit 'displays public domain' do
-    visit "/songs/#{@song_1.id}"
-    expect(page).to have_content("Is public_domain: #{@song_1.public_domain}")
+  it 'displays looking for work' do
+    visit "/musicians/#{@musician_1.id}"
+    expect(page).to have_content("Is looking for work: #{@musician_1.hirable}")
 
-    visit "/songs/#{@song_2.id}"
-    expect(page).to have_content("Is public_domain: #{@song_2.public_domain}")
+    visit "/musicians/#{@musician_2.id}"
+    expect(page).to have_content("Is looking for work: #{@musician_2.hirable}")
   end
 
   xit 'displays composed year' do
