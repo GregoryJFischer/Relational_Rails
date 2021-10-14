@@ -32,19 +32,11 @@ RSpec.describe 'the orchestras show page' do
     expect(page).to have_content("Is public_domain: #{@song_2.public_domain}")
   end
 
-  xit 'displays the max musicians' do
-    visit "/orchestras/#{@orchestra_1.id}"
-    expect(page).to have_content("Maximum Number of Musicians: #{@orchestra_1.max_musicians}")
+  it 'displays composed year' do
+    visit "/songs/#{@song_1.id}"
+    expect(page).to have_content("Composed in: #{@song_1.year_composed}")
 
-    visit "/orchestras/#{@orchestra_2.id}"
-    expect(page).to have_content("Maximum Number of Musicians: #{@orchestra_2.max_musicians}")
-  end
-
-  xit 'displays hiring' do
-    visit "/orchestras/#{@orchestra_1.id}"
-    expect(page).to have_content("Is currently hiring: #{@orchestra_1.hiring}")
-
-    visit "/orchestras/#{@orchestra_2.id}"
-    expect(page).to have_content("Is currently hiring: #{@orchestra_2.hiring}")
+    visit "/songs/#{@song_2.id}"
+    expect(page).to have_content("Composed in: #{@song_2.year_composed}")
   end
 end
