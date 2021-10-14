@@ -29,4 +29,16 @@ RSpec.describe 'Musicians Index' do
     expect(page).to have_content(@musician_2.age)
     expect(page).to have_no_content(@musician_1)
   end
+
+  it '#home' do
+    visit "/musicians/"
+
+    expect(page).to have_content("Home")
+  end
+
+  it '#new' do
+    visit "/musicians/"
+
+    expect(page).to have_content("New Musician")
+  end
 end
