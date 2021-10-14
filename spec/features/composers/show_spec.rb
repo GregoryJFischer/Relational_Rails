@@ -43,4 +43,12 @@ RSpec.describe 'the composers show page' do
     visit "/composers/#{@composer_2.id}"
     expect(page).to have_content("Total Songs: #{@composer_2.total_songs}")
   end
+
+  it 'displays the total number of songs' do
+    visit "/composers/#{@composer_1.id}"
+    expect(page).to have_content("Number of songs available: #{@composer_1.songs.count}")    
+    
+    visit "/composers/#{@composer_2.id}"
+    expect(page).to have_content("Number of songs available: #{@composer_2.songs.count}")    
+  end
 end
