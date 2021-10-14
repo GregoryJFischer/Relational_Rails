@@ -18,4 +18,6 @@ RSpec.describe 'Composers Index' do
     expect(page).to have_content(@composer_1.name)
     expect(page).to have_content(@composer_2.name)
   end
+
+
 end
