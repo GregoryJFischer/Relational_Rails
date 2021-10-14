@@ -47,4 +47,8 @@ class ComposersController < ApplicationController
     Composer.destroy(params[:id])
     redirect_to '/composers'
   end
+
+  def songs
+    @composer = Composer.find(params[:id])
+  end
 end
