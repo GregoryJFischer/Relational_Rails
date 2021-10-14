@@ -41,4 +41,14 @@ RSpec.describe 'Musicians Index' do
 
     expect(page).to have_link("New Musician")
   end
+
+  it 'nav' do
+    visit "/musicians/"
+
+    expect(page).to have_link("Home")
+    expect(page).to have_link("Orchestras")
+    expect(page).to have_link("Musicians")
+    expect(page).to have_link("Composers")
+    expect(page).to have_link("Songs")
+  end
 end

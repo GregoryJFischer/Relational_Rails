@@ -1,5 +1,13 @@
 <h1><%= @composer.name %></h1>
 
+<nav>
+  <a href="/">Home</a> |
+  <a href="/orchestras/">Orchestras</a> |
+  <a href="/musicians/">Musicians</a> |
+  <a href="/composers/">Composers</a> |
+  <a href="/songs/">Songs</a>
+</nav><br/>
+
 <a href="/composers/<%= @composer.id %>/songs">Songs</a><br/>
 Is currently active: <%= @composer.active %><br/>
 Nationality: <%= @composer.nationality %><br/>

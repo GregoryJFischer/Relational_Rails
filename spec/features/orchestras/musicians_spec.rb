@@ -35,4 +35,14 @@ RSpec.describe 'Orchestra Musicians' do
 
     expect(page).to have_link("Home")
   end
+
+  it 'nav' do
+    visit "/orchestras/#{@orchestra.id}/musicians"
+
+    expect(page).to have_link("Home")
+    expect(page).to have_link("Orchestras")
+    expect(page).to have_link("Musicians")
+    expect(page).to have_link("Composers")
+    expect(page).to have_link("Songs")
+  end
 end

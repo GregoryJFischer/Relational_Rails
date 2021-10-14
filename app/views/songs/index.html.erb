@@ -1,10 +1,13 @@
 <h1>Songs</h1>
 
-<a href="/">Home</a>
-
-<span> |</span>
-
-<a href="/songs/new">New Song</a><br/><br/>
+<nav>
+  <a href="/">Home</a> |
+  <a href="/orchestras/">Orchestras</a> |
+  <a href="/musicians/">Musicians</a> |
+  <a href="/composers/">Composers</a> |
+  <a href="/songs/">Songs</a> |
+  <a href="/songs/new">New Song</a>
+</nav><br/>
 
 <% @songs.each do |song| %>
   <a href="/songs/<%= song.id %>"><%= song.name %></a><br/>

@@ -37,4 +37,14 @@ RSpec.describe 'Orchestras Index' do
     expect(page).to have_content("#{@orchestra_1.created_at}")
     expect(page).to have_content("#{@orchestra_2.created_at}")
   end
+
+  it 'nav' do
+    visit "/orchestras/"
+
+    expect(page).to have_link("Home")
+    expect(page).to have_link("Orchestras")
+    expect(page).to have_link("Musicians")
+    expect(page).to have_link("Composers")
+    expect(page).to have_link("Songs")
+  end
 end
