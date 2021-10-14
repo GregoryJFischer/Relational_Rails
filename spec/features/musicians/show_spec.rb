@@ -32,11 +32,11 @@ RSpec.describe 'the musicians show page' do
     expect(page).to have_content("Is looking for work: #{@musician_2.hirable}")
   end
 
-  xit 'displays composed year' do
-    visit "/songs/#{@song_1.id}"
-    expect(page).to have_content("Composed in: #{@song_1.year_composed}")
+  it 'displays age' do
+    visit "/musicians/#{@musician_1.id}"
+    expect(page).to have_content("Age: #{@musician_1.age}")
 
-    visit "/songs/#{@song_2.id}"
-    expect(page).to have_content("Composed in: #{@song_2.year_composed}")
+    visit "/musicians/#{@musician_2.id}"
+    expect(page).to have_content("Age: #{@musician_2.age}")
   end
 end
