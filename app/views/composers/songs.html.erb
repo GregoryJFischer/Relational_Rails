@@ -1,5 +1,13 @@
 <h1>Songs written by <%=@composer.name%></h1>
 
+<nav>
+  <a href="/">Home</a> |
+  <a href="/orchestras/">Orchestras</a> |
+  <a href="/musicians/">Musicians</a> |
+  <a href="/composers/">Composers</a> |
+  <a href="/songs/">Songs</a>
+</nav><br/>
+
 <% @composer.songs.each do |song| %>
   <a href="/songs/<%= song.id %>"><%= song.name %></a><br/>
   <ul>
@@ -7,5 +15,3 @@
     <li>Composed in: <%= song.year_composed %></li>
   </ul><br/><br/>
 <% end %>
-
-<a href="/">Home</a>

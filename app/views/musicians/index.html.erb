@@ -1,10 +1,14 @@
 <h1>Musicians</h1>
 
-<a href="/">Home</a>
+<nav>
+  <a href="/">Home</a> |
+  <a href="/orchestras/">Orchestras</a> |
+  <a href="/musicians/">Musicians</a> |
+  <a href="/composers/">Composers</a> |
+  <a href="/songs/">Songs</a> |
+  <a href="/musicians/new">New Musician</a>
+</nav><br/>
 
-<span> |</span>
-
-<a href="/musicians/new">New Musician</a><br/><br/>
 
 <% @musicians.each do |musician| %>
   <a href="/musicians/<%= musician.id %>"><%= musician.name %></a><br/>

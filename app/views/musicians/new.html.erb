@@ -1,7 +1,14 @@
 <h1>New Musician</h1>
 
-<a href="/">Home</a><br/>
-<a href="/musicians/">Musicians Index</a><br/>
+<nav>
+  <a href="/">Home</a> |
+  <a href="/orchestras/">Orchestras</a> |
+  <a href="/musicians/">Musicians</a> |
+  <a href="/composers/">Composers</a> |
+  <a href="/songs/">Songs</a> |
+  <a href="/musicians/">Musicians Index</a>
+</nav><br/>
+
 
 <form method="post" action="/musicians">
   <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
