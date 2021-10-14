@@ -1,5 +1,7 @@
 <h1><%= @orchestra.name %></h1>
 
+<a href="/orchestras/<%= @orchestra.id %>/musicians">Musicians</a><br/>
+
 Location: <%= @orchestra.city %><br/>
 Maximum Number of Musicians: <%= @orchestra.max_musicians %><br/>
 Is currently hiring: <%= @orchestra.hiring %><br/>
