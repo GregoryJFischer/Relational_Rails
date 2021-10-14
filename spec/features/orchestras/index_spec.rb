@@ -22,12 +22,12 @@ RSpec.describe 'Orchestras Index' do
   it '#home' do
     visit "/orchestras/"
 
-    expect(page).to have_content("Home")
+    expect(page).to have_link("Home")
   end
 
   it '#new' do
     visit "/orchestras/"
 
-    expect(page).to have_content("New Orchestra")
+    expect(page).to have_link("New Orchestra")
   end
 end

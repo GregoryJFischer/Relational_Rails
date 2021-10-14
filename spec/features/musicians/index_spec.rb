@@ -33,12 +33,12 @@ RSpec.describe 'Musicians Index' do
   it '#home' do
     visit "/musicians/"
 
-    expect(page).to have_content("Home")
+    expect(page).to have_link("Home")
   end
 
   it '#new' do
     visit "/musicians/"
 
-    expect(page).to have_content("New Musician")
+    expect(page).to have_link("New Musician")
   end
 end

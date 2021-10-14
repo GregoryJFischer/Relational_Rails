@@ -22,12 +22,12 @@ RSpec.describe 'Composers Index' do
   it '#home' do
     visit "/composers/"
 
-    expect(page).to have_content("Home")
+    expect(page).to have_link("Home")
   end
 
   it '#new' do
     visit "/composers/"
 
-    expect(page).to have_content("New Composer")
+    expect(page).to have_link("New Composer")
   end
 end
