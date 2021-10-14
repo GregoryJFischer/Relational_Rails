@@ -28,12 +28,12 @@ RSpec.describe 'the orchestras show page' do
     expect(page).to have_content("Location: #{@orchestra_2.city}")
   end
 
-  xit 'displays the composer nationality' do
-    visit "/composers/#{@composer_1.id}"
-    expect(page).to have_content("Nationality: #{@composer_1.nationality}")
+  it 'displays the max musicians' do
+    visit "/orchestras/#{@orchestra_1.id}"
+    expect(page).to have_content("Maximum Number of Musicians: #{@orchestra_1.max_musicians}")
 
-    visit "/composers/#{@composer_2.id}"
-    expect(page).to have_content("Nationality: #{@composer_2.nationality}")
+    visit "/orchestras/#{@orchestra_2.id}"
+    expect(page).to have_content("Maximum Number of Musicians: #{@orchestra_2.max_musicians}")
   end
 
   xit 'displays total songs' do
