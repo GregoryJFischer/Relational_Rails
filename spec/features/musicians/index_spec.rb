@@ -16,7 +16,7 @@ RSpec.describe 'Musicians Index' do
                                   orchestra_id: @orchestra.id)
   end
 
-  it 'lists all song attributes' do
+  it '#attributes' do
     visit "/musicians/"
 
     expect(page).to have_content(@musician_1.name)
