@@ -2,12 +2,15 @@ require 'rails_helper'
 
 RSpec.describe 'Songs Index' do
   before :each do
-    @composer = Composer.create!(name: 'Ludwig van Beethoven')
-    @song_1 = Song.create(name:          "Symphony No. 1 in C",
+    @composer = Composer.create!(name:        "Ludwig van Beethoven",
+                                 nationality: "German",
+                                 active:      false,
+                                 total_songs: 722)
+    @song_1 = Song.create(name:         "Symphony No. 1 in C",
                          public_domain: true,
                          year_composed: 1800,
                          composer_id:   @composer.id)
-    @song_2 = Song.create(name:          "String Quartet No. 3 in D",
+    @song_2 = Song.create(name:         "String Quartet No. 3 in D",
                          public_domain: true,
                          year_composed: 1799,
                          composer_id:   @composer.id)

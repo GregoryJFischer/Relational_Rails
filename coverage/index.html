@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-10-14T15:37:27-04:00">2021-10-14T15:37:27-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-10-14T15:39:35-04:00">2021-10-14T15:39:35-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -381,7 +381,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b0148478bf022040f8b59473bacbff8eb174680f" class="src_link" title="spec/features/songs/index_spec.rb">spec/features/songs/index_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">29</td>
+            <td class="cell--number">32</td>
             <td class="cell--number">16</td>
             <td class="cell--number">16</td>
             <td class="cell--number">0</td>
@@ -5256,18 +5256,18 @@
 
             
 
-            <code class="ruby">    @composer = Composer.create!(name: &#39;Ludwig van Beethoven&#39;)</code>
+            <code class="ruby">    @composer = Composer.create!(name:        &quot;Ludwig van Beethoven&quot;,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="6">
+            
             
 
             
 
-            <code class="ruby">    @song_1 = Song.create(name:          &quot;Symphony No. 1 in C&quot;,</code>
+            <code class="ruby">                                 nationality: &quot;German&quot;,</code>
           </li>
         </div>
       
@@ -5278,7 +5278,7 @@
 
             
 
-            <code class="ruby">                         public_domain: true,</code>
+            <code class="ruby">                                 active:      false,</code>
           </li>
         </div>
       
@@ -5289,34 +5289,23 @@
 
             
 
-            <code class="ruby">                         year_composed: 1800,</code>
+            <code class="ruby">                                 total_songs: 722)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
-            
-
-            <code class="ruby">                         composer_id:   @composer.id)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
+          <li class="covered" data-hits="1" data-linenumber="9">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    @song_2 = Song.create(name:          &quot;String Quartet No. 3 in D&quot;,</code>
+            <code class="ruby">    @song_1 = Song.create(name:         &quot;Symphony No. 1 in C&quot;,</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
+          <li class="never" data-hits="" data-linenumber="10">
             
             
 
@@ -5327,18 +5316,18 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
             
 
-            <code class="ruby">                         year_composed: 1799,</code>
+            <code class="ruby">                         year_composed: 1800,</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -5349,13 +5338,24 @@
         </div>
       
         <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @song_2 = Song.create(name:         &quot;String Quartet No. 3 in D&quot;,</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="never" data-hits="" data-linenumber="14">
             
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">                         public_domain: true,</code>
           </li>
         </div>
       
@@ -5366,29 +5366,29 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">                         year_composed: 1799,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="16">
+            
             
 
             
 
-            <code class="ruby">  it &#39;lists all song attributes&#39; do</code>
+            <code class="ruby">                         composer_id:   @composer.id)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="17">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="17">
+            
             
 
             
 
-            <code class="ruby">    visit &quot;/songs/&quot;</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -5410,7 +5410,7 @@
 
             
 
-            <code class="ruby">    expect(page).to have_content(@song_1.name)</code>
+            <code class="ruby">  it &#39;lists all song attributes&#39; do</code>
           </li>
         </div>
       
@@ -5421,34 +5421,12 @@
 
             
 
-            <code class="ruby">    expect(page).to have_content(@song_1.public_domain)</code>
+            <code class="ruby">    visit &quot;/songs/&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="21">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(page).to have_content(@song_1.year_composed)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(page).to have_no_content(@song_2)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="never" data-hits="" data-linenumber="21">
             
             
 
@@ -5459,13 +5437,35 @@
         </div>
       
         <div>
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content(@song_1.name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content(@song_1.public_domain)</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="covered" data-hits="1" data-linenumber="24">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    expect(page).to have_content(@song_2.name)</code>
+            <code class="ruby">    expect(page).to have_content(@song_1.year_composed)</code>
           </li>
         </div>
       
@@ -5476,18 +5476,18 @@
 
             
 
-            <code class="ruby">    expect(page).to have_content(@song_2.public_domain)</code>
+            <code class="ruby">    expect(page).to have_no_content(@song_2)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="26">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="26">
+            
             
 
             
 
-            <code class="ruby">    expect(page).to have_content(@song_2.year_composed)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -5498,12 +5498,45 @@
 
             
 
+            <code class="ruby">    expect(page).to have_content(@song_2.name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="28">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content(@song_2.public_domain)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="29">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content(@song_2.year_composed)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="30">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">    expect(page).to have_no_content(@song_1)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="28">
+          <li class="never" data-hits="" data-linenumber="31">
             
             
 
@@ -5514,7 +5547,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="29">
+          <li class="never" data-hits="" data-linenumber="32">
             
             
 
