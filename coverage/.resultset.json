@@ -343,7 +343,27 @@
       },
       "/Users/lesleysanders/turing/2module/Relational_Rails/spec/features/orchestras/index_spec.rb": {
         "lines": [
-
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
         ]
       },
       "/Users/lesleysanders/turing/2module/Relational_Rails/spec/features/orchestras/new_spec.rb": {
@@ -577,6 +597,60 @@
           null
         ]
       },
+      "/Users/lesleysanders/turing/2module/Relational_Rails/app/controllers/orchestras_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
       "/Users/lesleysanders/turing/2module/Relational_Rails/app/models/song.rb": {
         "lines": [
           null,
@@ -641,6 +715,6 @@
         ]
       }
     },
-    "timestamp": 1634242529
+    "timestamp": 1634242798
   }
 }
