@@ -29,4 +29,16 @@ RSpec.describe 'Songs Index' do
     expect(page).to have_content(@song_2.year_composed)
     expect(page).to have_no_content(@song_1)
   end
+
+  it '#home' do
+    visit "/songs/"
+
+    expect(page).to have_content("Home")
+  end
+
+  it '#new' do
+    visit "/songs/"
+
+    expect(page).to have_content("New Song")
+  end
 end
