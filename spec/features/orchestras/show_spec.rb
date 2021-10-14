@@ -20,12 +20,12 @@ RSpec.describe 'the orchestras show page' do
     expect(page).to have_content(@orchestra_2.name)
   end
 
-  xit 'displays composer status' do
-    visit "/composers/#{@composer_1.id}"
-    expect(page).to have_content("Is currently active: #{@composer_1.active}")
+  it 'displays location' do
+    visit "/orchestras/#{@orchestra_1.id}"
+    expect(page).to have_content("Location: #{@orchestra_1.city}")
 
-    visit "/composers/#{@composer_2.id}"
-    expect(page).to have_content("Is currently active: #{@composer_2.active}")
+    visit "/orchestras/#{@orchestra_2.id}"
+    expect(page).to have_content("Location: #{@orchestra_2.city}")
   end
 
   xit 'displays the composer nationality' do
