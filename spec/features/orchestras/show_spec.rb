@@ -43,4 +43,12 @@ RSpec.describe 'the orchestras show page' do
     visit "/orchestras/#{@orchestra_2.id}"
     expect(page).to have_content("Is currently hiring: #{@orchestra_2.hiring}")
   end
+
+  it 'displays number of musicians' do
+    visit "/orchestras/#{@orchestra_1.id}"
+    expect(page).to have_content "Number of Musicians: #{@orchestra_1.musicians.count}"
+    
+    visit "/orchestras/#{@orchestra_2.id}"
+    expect(page).to have_content "Number of Musicians: #{@orchestra_2.musicians.count}"
+  end
 end
