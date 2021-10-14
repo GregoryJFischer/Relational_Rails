@@ -6,6 +6,7 @@
 
 <a href="/orchestras/new">New Orchestra</a><br/><br/>
 
-<% @orchestras.each do |orchestra| %>
-  <a href="/orchestras/<%=orchestra.id%>"><%=orchestra.name%></a><br/><br/>
+<% @orchestras.order(:created_at).each do |orchestra| %>
+  <a href="/orchestras/<%=orchestra.id%>"><%=orchestra.name%></a>,
+  Created: <%=orchestra.created_at%><br/><br/>
 <% end %>

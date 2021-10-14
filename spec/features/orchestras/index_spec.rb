@@ -30,4 +30,10 @@ RSpec.describe 'Orchestras Index' do
 
     expect(page).to have_link("New Orchestra")
   end
+
+  it 'show created at time' do
+    visit "/orchestras/"
+
+    expect(page).to have_content("#{@orchestra_1.created_at}")
+  end
 end
