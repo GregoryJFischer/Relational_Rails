@@ -11,7 +11,7 @@ RSpec.describe 'New' do
     expect(page).to have_link("Songs")
   end
 
-  it 'has content' do
+  it 'content' do
     visit "/composers/new"
 
     expect(page).to have_content("New Composers")
@@ -20,5 +20,11 @@ RSpec.describe 'New' do
     expect(page).to have_content("Nationality:")
     expect(page).to have_content("Is Active?")
     expect(page).to have_content("Total Songs:")
+  end
+
+  it 'button' do
+    visit "/composers/new"
+
+    expect(page). to have_button
   end
 end
