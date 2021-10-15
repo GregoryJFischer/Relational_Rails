@@ -1,0 +1,24 @@
+<h1>Edit <%= @composer.name %></h1>
+
+<nav>
+  <a href="/">Home</a> |
+  <a href="/composers/">composers</a> |
+  <a href="/musicians/">Musicians</a> |
+  <a href="/composers/">Composers</a> |
+  <a href="/songs/">Songs</a> |
+  <a href="/composers/<%= @composer.id %>"><%= @composer.name %></a>
+</nav><br/>
+
+<form method="post" action="/composers/<%= @composer.id %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <p>Name:</p>
+  <input type="text" name='composer[name]'/><br/>
+  <p>Nationality:</p>
+  <input type="text" name='composer[nationality]'/><br>
+  <p>Is currently active?</p>
+  <input type="text" name='composer[hiring]'/><br/>
+  <p>Total Songs:</p>
+  <input type="text" name='composer[max_musicians]'/><br/><br/>
+  <input type='submit'/>
+</form>

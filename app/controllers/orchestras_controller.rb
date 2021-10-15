@@ -30,7 +30,7 @@ class OrchestrasController < ApplicationController
   end
 
   def update
-    orchestra = Orchetra.find(params[:id])
+    orchestra = Orchestra.find(params[:id])
     orchestra.update({
       name: params[:orchestra][:name],
       city: params[:orchestra][:city],
