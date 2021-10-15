@@ -28,17 +28,16 @@ RSpec.describe 'Edit' do
     expect(page).to have_link("Songs")
   end
 
-  xit 'has a form' do
-    visit "/orchestras/#{@orchestra.id}/edit"
+  it 'has a form' do
+    visit "/musicians/#{@musician.id}/edit"
 
     expect(page).to have_content("Name:")
-    expect(page).to have_content("City:")
-    expect(page).to have_content("Is Hiring?")
-    expect(page).to have_content("Max Number of Musicians:")
+    expect(page).to have_content("Age:")
+    expect(page).to have_content("Hirable?")
   end
 
-  xit 'has a button' do
-    visit "/orchestras/#{@orchestra.id}/edit"
+  it 'has a button' do
+    visit "/musicians/#{@musician.id}/edit"
 
     expect(page).to have_button()
   end
