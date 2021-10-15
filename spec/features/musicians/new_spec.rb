@@ -10,4 +10,21 @@ RSpec.describe 'new' do
     expect(page).to have_link("Composers")
     expect(page).to have_link("Songs")
   end
+
+  it 'content' do
+    visit "/musicians/new"
+
+    expect(page).to have_content("New Musician")
+    expect(page).to have_content("Enter a New Musician")
+    expect(page).to have_content("Orchestra ID:")
+    expect(page).to have_content("Name:")
+    expect(page).to have_content("Is Looking for Work?")
+    expect(page).to have_content("Age:")
+  end
+
+  it 'button' do
+    visit "/musicians/new"
+
+    expect(page).to have_button
+  end
 end
