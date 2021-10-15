@@ -10,4 +10,21 @@ RSpec.describe 'new' do
     expect(page).to have_link("Composers")
     expect(page).to have_link("Songs")
   end
+
+  it 'content' do
+    visit "/songs/new"
+
+    expect(page).to have_content("New Song")
+    expect(page).to have_content("Enter a New Song")
+    expect(page).to have_content("Composer ID:")
+    expect(page).to have_content("Name:")
+    expect(page).to have_content("Is Public Domain?")
+    expect(page).to have_content("Year Composed:")
+  end
+
+  it 'button' do
+    visit "/songs/new"
+
+    expect(page).to have_button
+  end
 end

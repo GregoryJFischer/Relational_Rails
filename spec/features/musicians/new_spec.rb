@@ -25,6 +25,6 @@ RSpec.describe 'new' do
   it 'button' do
     visit "/musicians/new"
 
-    expect(page). to have_button
+    expect(page).to have_button
   end
 end
