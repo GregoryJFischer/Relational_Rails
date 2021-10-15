@@ -26,6 +26,8 @@ RSpec.describe 'Edit' do
     expect(page).to have_link("Musicians")
     expect(page).to have_link("Composers")
     expect(page).to have_link("Songs")
+    expect(page).to have_link("#{@musician.name}")
+
   end
 
   it 'has a form' do
