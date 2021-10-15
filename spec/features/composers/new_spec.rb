@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'New' do
-  it 'has navigation' do
+  it 'nav' do
     visit "/composers/new"
 
     expect(page).to have_link("Home")
@@ -11,9 +11,14 @@ RSpec.describe 'New' do
     expect(page).to have_link("Songs")
   end
 
-  it 'has page heading' do
+  it 'has content' do
     visit "/composers/new"
 
     expect(page).to have_content("New Composers")
+    expect(page).to have_content("Enter a New Composer")
+    expect(page).to have_content("Name:")
+    expect(page).to have_content("Nationality:")
+    expect(page).to have_content("Is Active?")
+    expect(page).to have_content("Total Songs:")
   end
 end
