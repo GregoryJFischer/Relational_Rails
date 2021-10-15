@@ -9,7 +9,7 @@
   <a href="/songs/new">New Song</a>
 </nav><br/>
 
-<% @songs.each do |song| %>
+<% @songs.true?.each do |song| %>
   <a href="/songs/<%= song.id %>"><%= song.name %></a><br/>
   <ul>
     <li>Is public_domain: <%= song.public_domain %></li>

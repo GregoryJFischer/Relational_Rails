@@ -10,7 +10,7 @@
 </nav><br/>
 
 
-<% @musicians.each do |musician| %>
+<% @musicians.true?.each do |musician| %>
   <a href="/musicians/<%= musician.id %>"><%= musician.name %></a><br/>
   <ul>
     <li>Is looking for work: <%= musician.hirable %></li>
