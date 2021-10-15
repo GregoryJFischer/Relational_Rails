@@ -1,23 +1,23 @@
 require 'rails_helper'
 
-RSpec.describe 'Songs Index' do
+RSpec.describe 'Composer Songs' do
   before :each do
-    @composer = Composer.create!(name:        "Ludwig van Beethoven",
-                                 nationality: "German",
-                                 active:      false,
-                                 total_songs: 722)
+    @composer = Composer.create!( name:        "Ludwig van Beethoven",
+                                  nationality: "German",
+                                  active:      false,
+                                  total_songs: 722)
     @song_1 = Song.create(name:         "Symphony No. 1 in C",
-                         public_domain: true,
-                         year_composed: 1800,
-                         composer_id:   @composer.id)
+                          public_domain: true,
+                          year_composed: 1800,
+                          composer_id:   @composer.id)
     @song_2 = Song.create(name:         "String Quartet No. 3 in D",
-                         public_domain: true,
-                         year_composed: 1799,
-                         composer_id:   @composer.id)
+                          public_domain: true,
+                          year_composed: 1799,
+                          composer_id:   @composer.id)
   end
 
   it '#attributes' do
-    visit "/songs/"
+    visit "/composers/#{@composer.id}/songs"
 
     expect(page).to have_content(@song_1.name)
     expect(page).to have_content(@song_1.public_domain)
@@ -31,19 +31,13 @@ RSpec.describe 'Songs Index' do
   end
 
   it '#home' do
-    visit "/songs/"
+    visit "/composers/#{@composer.id}/songs"
 
     expect(page).to have_link("Home")
   end
 
-  it '#new' do
-    visit "/songs/"
-
-    expect(page).to have_link("New Song")
-  end
-
   it 'nav' do
-    visit "/songs/"
+    visit "/composers/#{@composer.id}/songs"
 
     expect(page).to have_link("Home")
     expect(page).to have_link("Orchestras")

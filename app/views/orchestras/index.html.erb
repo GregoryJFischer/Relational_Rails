@@ -1,11 +1,15 @@
 <h1>Orchestras</h1>
 
-<a href="/">Home</a>
+<nav>
+  <a href="/">Home</a> |
+  <a href="/orchestras/">Orchestras</a> |
+  <a href="/musicians/">Musicians</a> |
+  <a href="/composers/">Composers</a> |
+  <a href="/songs/">Songs</a> |
+  <a href="/orchestras/new">New Orchestra</a>
+</nav><br/>
 
-<span> |</span>
-
-<a href="/orchestras/new">New Orchestra</a><br/><br/>
-
-<% @orchestras.each do |orchestra| %>
-  <a href="/orchestras/<%=orchestra.id%>"><%=orchestra.name%></a><br/><br/>
+<% @orchestras.order(:created_at).each do |orchestra| %>
+  <a href="/orchestras/<%=orchestra.id%>"><%=orchestra.name%></a>,
+  Created: <%=orchestra.created_at%><br/><br/>
 <% end %>

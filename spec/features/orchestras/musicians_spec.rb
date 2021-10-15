@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Musicians Index' do
+RSpec.describe 'Orchestra Musicians' do
   before :each do
     @orchestra = Orchestra.create!(name:          "New York Philharmonic",
                                    city:          "New York City",
@@ -17,7 +17,7 @@ RSpec.describe 'Musicians Index' do
   end
 
   it '#attributes' do
-    visit "/musicians/"
+    visit "/orchestras/#{@orchestra.id}/musicians"
 
     expect(page).to have_content(@musician_1.name)
     expect(page).to have_content(@musician_1.hirable)
@@ -31,19 +31,13 @@ RSpec.describe 'Musicians Index' do
   end
 
   it '#home' do
-    visit "/musicians/"
+    visit "/orchestras/#{@orchestra.id}/musicians"
 
     expect(page).to have_link("Home")
   end
 
-  it '#new' do
-    visit "/musicians/"
-
-    expect(page).to have_link("New Musician")
-  end
-
   it 'nav' do
-    visit "/musicians/"
+    visit "/orchestras/#{@orchestra.id}/musicians"
 
     expect(page).to have_link("Home")
     expect(page).to have_link("Orchestras")

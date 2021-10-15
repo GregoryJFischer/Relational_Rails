@@ -1,5 +1,15 @@
 <h1><%= @orchestra.name %></h1>
 
+<nav>
+  <a href="/">Home</a> |
+  <a href="/orchestras/">Orchestras</a> |
+  <a href="/musicians/">Musicians</a> |
+  <a href="/composers/">Composers</a> |
+  <a href="/songs/">Songs</a> |
+  <a href="/orchestras/<%= @orchestra.id %>/musicians">Musicians in this Orchestra</a>
+</nav><br/>
+
 Location: <%= @orchestra.city %><br/>
 Maximum Number of Musicians: <%= @orchestra.max_musicians %><br/>
 Is currently hiring: <%= @orchestra.hiring %><br/>
+Number of Musicians: <%= @orchestra.musicians.count %><br/>

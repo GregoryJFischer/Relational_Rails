@@ -1,11 +1,15 @@
 <h1>Composers</h1>
 
-<a href="/">Home</a>
+<nav>
+  <a href="/">Home</a> |
+  <a href="/orchestras/">Orchestras</a> |
+  <a href="/musicians/">Musicians</a> |
+  <a href="/composers/">Composers</a> |
+  <a href="/songs/">Songs</a> |
+  <a href="/composers/new">New Composer</a>
+</nav><br/>
 
-<span> |</span>
-
-<a href="/composers/new">New Composer</a><br/><br/>
-
-<% @composers.each do |composer| %>
-  <a href="/composers/<%= composer.id %>"><%= composer.name %></a><br/><br/>
+<% @composers.order(:created_at).each do |composer| %>
+  <a href="/composers/<%= composer.id %>"><%= composer.name %></a>,
+  Created: <%=composer.created_at%><br/><br/><br/><br/>
 <% end %>

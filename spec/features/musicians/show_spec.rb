@@ -39,4 +39,14 @@ RSpec.describe 'the musicians show page' do
     visit "/musicians/#{@musician_2.id}"
     expect(page).to have_content("Age: #{@musician_2.age}")
   end
+
+  it 'nav' do
+    visit "/musicians/#{@musician_1.id}"
+
+    expect(page).to have_link("Home")
+    expect(page).to have_link("Orchestras")
+    expect(page).to have_link("Musicians")
+    expect(page).to have_link("Composers")
+    expect(page).to have_link("Songs")
+  end
 end

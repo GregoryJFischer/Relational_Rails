@@ -1,16 +1,14 @@
-<h1>Musicians</h1>
+<h1>Musicians belonging to <%=@orchestra.name%></h1>
 
 <nav>
   <a href="/">Home</a> |
   <a href="/orchestras/">Orchestras</a> |
   <a href="/musicians/">Musicians</a> |
   <a href="/composers/">Composers</a> |
-  <a href="/songs/">Songs</a> |
-  <a href="/musicians/new">New Musician</a>
+  <a href="/songs/">Songs</a>
 </nav><br/>
 
-
-<% @musicians.each do |musician| %>
+<% @orchestra.musicians.each do |musician| %>
   <a href="/musicians/<%= musician.id %>"><%= musician.name %></a><br/>
   <ul>
     <li>Is looking for work: <%= musician.hirable %></li>
