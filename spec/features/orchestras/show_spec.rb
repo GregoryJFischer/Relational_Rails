@@ -47,7 +47,7 @@ RSpec.describe 'the orchestras show page' do
   it 'displays number of musicians' do
     visit "/orchestras/#{@orchestra_1.id}"
     expect(page).to have_content "Number of Musicians: #{@orchestra_1.musicians.count}"
-    
+
     visit "/orchestras/#{@orchestra_2.id}"
     expect(page).to have_content "Number of Musicians: #{@orchestra_2.musicians.count}"
   end
@@ -60,5 +60,11 @@ RSpec.describe 'the orchestras show page' do
     expect(page).to have_link("Musicians")
     expect(page).to have_link("Composers")
     expect(page).to have_link("Songs")
+  end
+
+  it 'button' do
+    visit "/orchestras/new"
+
+    expect(page).to have_button
   end
 end
