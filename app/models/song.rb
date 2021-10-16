@@ -6,4 +6,8 @@ class Song < ApplicationRecord
   def self.true?
     Song.where(public_domain: :true)
   end
+
+  def self.order_name
+    Song.order(:name)
+  end
 end

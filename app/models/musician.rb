@@ -6,4 +6,8 @@ class Musician < ApplicationRecord
   def self.true?
     Musician.where(hirable: :true)
   end
+
+  def self.order_name
+    Musician.order(:name)
+  end
 end

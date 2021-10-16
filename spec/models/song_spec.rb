@@ -22,4 +22,9 @@ RSpec.describe Song do
     expect(Song.true?[0]).to eq @song_1
     expect(Song.true?.include?(@song_2)).to be false
   end
+
+  it 'order_name' do
+    expect(Song.order_name.first).to eq @song_2
+    expect(Song.order_name.last).to eq @song_1
+  end
 end
