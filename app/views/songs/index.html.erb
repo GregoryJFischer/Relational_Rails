@@ -16,5 +16,10 @@
   <ul>
     <li>Is public_domain: <%= song.public_domain %></li>
     <li>Composed in: <%= song.year_composed %></li>
-  </ul><br/><br/>
+  </ul>
+  <form action="/songs/<%= song.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete"/>
+  </form><br/><br/>
 <% end %>
