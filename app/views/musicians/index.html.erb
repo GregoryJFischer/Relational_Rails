@@ -11,7 +11,9 @@
 
 
 <% @musicians.true?.each do |musician| %>
-  <a href="/musicians/<%= musician.id %>"><%= musician.name %></a><br/>
+  <a href="/musicians/<%= musician.id %>"><%= musician.name %></a> |
+  <a href="/musicians/<%=musician.id%>/edit">Edit</a>
+  <br/>
   <ul>
     <li>Is looking for work: <%= musician.hirable %></li>
     <li>Age: <%= musician.age %></li>
