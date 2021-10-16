@@ -62,9 +62,9 @@ RSpec.describe 'the composers show page' do
     expect(page).to have_link("Songs")
   end
 
-  it 'button' do
-    visit "/composers/new"
+  it 'delete' do
+    visit "/composers/#{@composer_1.id}"
 
-    expect(page).to have_button
+    expect(page).to have_button("Delete")
   end
 end

@@ -53,4 +53,10 @@ RSpec.describe 'Composers Index' do
 
     expect(page).to have_link("Edit")
   end
+
+  it 'delete' do
+    visit "/composers/"
+
+    expect(page).to have_button("Delete")
+  end
 end
