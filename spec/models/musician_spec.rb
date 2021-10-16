@@ -22,4 +22,9 @@ RSpec.describe Musician, type: :model do
     expect(Musician.true?[0]).to eq @musician_1
     expect(Musician.true?.include?(@musician_2)).to be false
   end
+
+  it '#order_name' do
+    expect(Musician.order_name.first).to eq @musician_2
+    expect(Musician.order_name.last).to eq @musician_1
+  end
 end

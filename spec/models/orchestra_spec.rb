@@ -16,4 +16,9 @@ RSpec.describe Orchestra do
                                     max_musicians: 3)
   end
   it {should have_many :musicians}
+
+  it '#order_name' do
+    expect(Orchestra.order_name.first).to eq @orchestra_1
+    expect(Orchestra.order_name.last).to eq @orchestra_3
+  end
 end
