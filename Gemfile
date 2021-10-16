@@ -39,7 +39,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'pry'
-  gem 'simplecov'
   gem 'capybara'
   gem 'shoulda-matchers', '~> 4.0'
 end
