@@ -49,4 +49,10 @@ RSpec.describe 'the orchestras show page' do
     expect(page).to have_link("Composers")
     expect(page).to have_link("Songs")
   end
+
+  it 'delete' do
+    visit "/songs/#{@song_1.id}"
+
+    expect(page).to have_button("Delete")
+  end
 end
