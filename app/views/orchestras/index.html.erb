@@ -11,7 +11,7 @@
 
 <% @orchestras.order(:created_at).each do |orchestra| %>
   <a href="/orchestras/<%=orchestra.id%>"><%=orchestra.name%></a>,
-  Created: <%=orchestra.created_at%>
+  Created: <%=orchestra.created_at%> |
   <a href="/orchestras/<%=orchestra.id%>/edit">Edit</a>
   <br/><br/>
 <% end %>
