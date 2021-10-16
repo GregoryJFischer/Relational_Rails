@@ -18,7 +18,7 @@ RSpec.describe 'Edit' do
     visit "/composers/#{@composer.id}/edit"
 
     expect(page).to have_link("Home")
-    expect(page).to have_link("composers")
+    expect(page).to have_link("Orchestras")
     expect(page).to have_link("Musicians")
     expect(page).to have_link("Composers")
     expect(page).to have_link("Songs")

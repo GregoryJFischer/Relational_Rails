@@ -11,5 +11,7 @@
 
 <% @composers.order(:created_at).each do |composer| %>
   <a href="/composers/<%= composer.id %>"><%= composer.name %></a>,
-  Created: <%=composer.created_at%><br/><br/><br/><br/>
+  Created: <%=composer.created_at%> |
+  <a href="/composers/<%=composer.id%>/edit">Edit</a>
+  <br/><br/><br/><br/>
 <% end %>
