@@ -33,7 +33,7 @@ RSpec.describe 'Composers Index' do
 
   it 'date time' do
     visit "/composers/"
-    
+
     expect(page).to have_content("#{@composer_1.created_at}")
     expect(page).to have_content("#{@composer_2.created_at}")
   end
@@ -46,5 +46,11 @@ RSpec.describe 'Composers Index' do
     expect(page).to have_link("Musicians")
     expect(page).to have_link("Composers")
     expect(page).to have_link("Songs")
+  end
+
+  it 'edit' do
+    visit "/composers/"
+
+    expect(page).to have_link("Edit")
   end
 end
