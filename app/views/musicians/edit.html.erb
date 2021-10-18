@@ -10,6 +10,8 @@
 </nav><br/>
 
 <%= form_with url: "/musicians/#{@musician.id}", method: :patch, local: true do |form| %>
+  <%= form.label :orchestra_id, "Orchestra ID:"%><br/>
+  <%= form.text_field :orchestra_id%><br/><br/>
   <%= form.label :name, "Name:" %><br/>
   <%= form.text_field :name %><br/><br/>
   <%= form.label :age, "Age:" %><br/>
