@@ -13,10 +13,8 @@
   <a href="/orchestras/<%=orchestra.id%>"><%=orchestra.name%></a>,
   Created: <%=orchestra.created_at%> |
   <a href="/orchestras/<%=orchestra.id%>/edit">Edit</a> |
-  <form action="/orchestras/<%= orchestra.id %>" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete"/>
-  </form>
+  <%= form_with url: "/orchestras/#{orchestra.id}", method: :delete, local: true do |form|%>
+    <%= form.submit "Delete" %>
+  <% end %>
   <br/><br/>
 <% end %>

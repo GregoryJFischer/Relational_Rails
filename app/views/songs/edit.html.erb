@@ -9,14 +9,14 @@
   <a href="/songs/<%= @song.id %>"><%= @song.name %></a>
 </nav><br/>
 
-<form method="post" action="/songs/<%= @song.id %>">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="PATCH" />
-  <p>Name:</p>
-  <input type="text" name='song[name]'/><br/>
-  <p>Year Composed:</p>
-  <input type="text" name='song[year_composed]'/><br>
-  <p>Public Domain?</p>
-  <input type="text" name='song[public_domain]'/><br/>
-  <input type='submit'/>
-</form>
+<%= form_with url: "/songs/#{@song.id}", method: :patch, local: true do |form|%>
+  <%= form.label :composer_id, "Composer Id:"%><br/>
+  <%= form.text_field :composer_id%><br/><br/>  
+  <%= form.label :name, "Name:" %><br/>
+  <%= form.text_field :name%><br/><br/>
+  <%= form.label :year_composed, "Year Composed:" %><br/>
+  <%= form.text_field :year_composed %><br/><br/>
+  <%= form.label :public_domain, "Public Domain?" %><br/>
+  <%= form.text_field :public_domain %><br/><br/>
+  <%= form.submit "Submit"%>
+<% end %>
