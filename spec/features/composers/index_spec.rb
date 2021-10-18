@@ -6,10 +6,7 @@ RSpec.describe 'Composers Index' do
                                    nationality: "German",
                                    active:      false,
                                    total_songs: 722)
-    @composer_2 = Composer.create!(name: "Andrew Brick",
-                                   nationality: "American",
-                                   active: true,
-                                   total_songs: 100)
+
   end
 
   describe 'as a visitor' do
@@ -50,11 +47,21 @@ RSpec.describe 'Composers Index' do
         expect(page).to have_content('Bob')
       end
 
+      it 'can delete a composer' do
+        visit '/composers'
+
+        save_and_open_page
+        click_button('Delete', match: :first)
+
+        expect(current_path).to eq("/composers")
+        expect(current_path).to_not have_content(@composer_1.name)
+        expect(page).to_not have_button('Delete')
+      end
+
       it '#name' do
         visit "/composers/"
 
         expect(page).to have_content(@composer_1.name)
-        expect(page).to have_content(@composer_2.name)
       end
 
       it '#home' do
@@ -73,7 +80,6 @@ RSpec.describe 'Composers Index' do
         visit "/composers/"
 
         expect(page).to have_content("#{@composer_1.created_at}")
-        expect(page).to have_content("#{@composer_2.created_at}")
       end
 
       it 'nav' do
