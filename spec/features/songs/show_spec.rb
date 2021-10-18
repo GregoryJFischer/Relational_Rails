@@ -16,43 +16,57 @@ RSpec.describe 'the orchestras show page' do
                          composer_id:   @composer.id)
   end
 
-  it 'displays the song name' do
-    visit "/songs/#{@song_1.id}"
-    expect(page).to have_content(@song_1.name)
+  describe 'as a visitor' do
+    describe 'when I visit the songs index page' do
+      it 'displays the song name' do
+        visit "/songs/#{@song_1.id}"
+        expect(page).to have_content(@song_1.name)
 
-    visit "/songs/#{@song_2.id}"
-    expect(page).to have_content(@song_2.name)
-  end
+        visit "/songs/#{@song_2.id}"
+        expect(page).to have_content(@song_2.name)
+      end
 
-  it 'displays public domain' do
-    visit "/songs/#{@song_1.id}"
-    expect(page).to have_content("Is public_domain: #{@song_1.public_domain}")
+      it 'displays public domain' do
+        visit "/songs/#{@song_1.id}"
+        expect(page).to have_content("Is public_domain: #{@song_1.public_domain}")
 
-    visit "/songs/#{@song_2.id}"
-    expect(page).to have_content("Is public_domain: #{@song_2.public_domain}")
-  end
+        visit "/songs/#{@song_2.id}"
+        expect(page).to have_content("Is public_domain: #{@song_2.public_domain}")
+      end
 
-  it 'displays composed year' do
-    visit "/songs/#{@song_1.id}"
-    expect(page).to have_content("Composed in: #{@song_1.year_composed}")
+      it 'displays composed year' do
+        visit "/songs/#{@song_1.id}"
+        expect(page).to have_content("Composed in: #{@song_1.year_composed}")
 
-    visit "/songs/#{@song_2.id}"
-    expect(page).to have_content("Composed in: #{@song_2.year_composed}")
-  end
+        visit "/songs/#{@song_2.id}"
+        expect(page).to have_content("Composed in: #{@song_2.year_composed}")
+      end
 
-  it 'nav' do
-    visit "/songs/#{@song_1.id}"
+      it 'can delete a song' do
+        visit "/songs/#{@song_1.id}"
 
-    expect(page).to have_link("Home")
-    expect(page).to have_link("Orchestras")
-    expect(page).to have_link("Musicians")
-    expect(page).to have_link("Composers")
-    expect(page).to have_link("Songs")
-  end
+        save_and_open_page
+        click_button('Delete', match: :first)
 
-  it 'delete' do
-    visit "/songs/#{@song_1.id}"
+        expect(current_path).to eq("/songs")
+        expect(current_path).to_not have_content(@song_1.name)
+      end
 
-    expect(page).to have_button("Delete")
-  end
+      it 'nav' do
+        visit "/songs/#{@song_1.id}"
+
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Orchestras")
+        expect(page).to have_link("Musicians")
+        expect(page).to have_link("Composers")
+        expect(page).to have_link("Songs")
+      end
+
+      it 'delete' do
+        visit "/songs/#{@song_1.id}"
+
+        expect(page).to have_button("Delete")
+      end
+    end
+  end 
 end

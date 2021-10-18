@@ -16,43 +16,57 @@ RSpec.describe 'the musicians show page' do
                                   orchestra_id: @orchestra.id)
   end
 
-  it 'displays the musician name' do
-    visit "/musicians/#{@musician_1.id}"
-    expect(page).to have_content(@musician_1.name)
+  describe 'as a visitor' do
+    describe 'when I visit the musicians index page' do
+      it 'displays the musician name' do
+        visit "/musicians/#{@musician_1.id}"
+        expect(page).to have_content(@musician_1.name)
 
-    visit "/musicians/#{@musician_2.id}"
-    expect(page).to have_content(@musician_2.name)
-  end
+        visit "/musicians/#{@musician_2.id}"
+        expect(page).to have_content(@musician_2.name)
+      end
 
-  it 'displays looking for work' do
-    visit "/musicians/#{@musician_1.id}"
-    expect(page).to have_content("Is looking for work: #{@musician_1.hirable}")
+      it 'displays looking for work' do
+        visit "/musicians/#{@musician_1.id}"
+        expect(page).to have_content("Is looking for work: #{@musician_1.hirable}")
 
-    visit "/musicians/#{@musician_2.id}"
-    expect(page).to have_content("Is looking for work: #{@musician_2.hirable}")
-  end
+        visit "/musicians/#{@musician_2.id}"
+        expect(page).to have_content("Is looking for work: #{@musician_2.hirable}")
+      end
 
-  it 'displays age' do
-    visit "/musicians/#{@musician_1.id}"
-    expect(page).to have_content("Age: #{@musician_1.age}")
+      it 'displays age' do
+        visit "/musicians/#{@musician_1.id}"
+        expect(page).to have_content("Age: #{@musician_1.age}")
 
-    visit "/musicians/#{@musician_2.id}"
-    expect(page).to have_content("Age: #{@musician_2.age}")
-  end
+        visit "/musicians/#{@musician_2.id}"
+        expect(page).to have_content("Age: #{@musician_2.age}")
+      end
 
-  it 'nav' do
-    visit "/musicians/#{@musician_1.id}"
+      it 'can delete a musician' do
+        visit "/musicians/#{@musician_1.id}"
 
-    expect(page).to have_link("Home")
-    expect(page).to have_link("Orchestras")
-    expect(page).to have_link("Musicians")
-    expect(page).to have_link("Composers")
-    expect(page).to have_link("Songs")
-  end
+        save_and_open_page
+        click_button('Delete', match: :first)
 
-  it 'delete' do
-    visit "/musicians/#{@musician_1.id}"
+        expect(current_path).to eq("/musicians")
+        expect(current_path).to_not have_content(@musician_1.name)
+      end
 
-    expect(page).to have_button("Delete")
+      it 'nav' do
+        visit "/musicians/#{@musician_1.id}"
+
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Orchestras")
+        expect(page).to have_link("Musicians")
+        expect(page).to have_link("Composers")
+        expect(page).to have_link("Songs")
+      end
+
+      it 'delete' do
+        visit "/musicians/#{@musician_1.id}"
+
+        expect(page).to have_button("Delete")
+      end
+    end
   end
 end

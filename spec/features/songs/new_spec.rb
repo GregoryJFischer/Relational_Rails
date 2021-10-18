@@ -18,7 +18,7 @@ RSpec.describe 'new' do
     expect(page).to have_content("Enter a New Song")
     expect(page).to have_content("Composer ID:")
     expect(page).to have_content("Name:")
-    expect(page).to have_content("Is Public Domain?")
+    expect(page).to have_content("Public Domain?")
     expect(page).to have_content("Year Composed:")
   end
 
