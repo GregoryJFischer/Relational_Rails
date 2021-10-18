@@ -6,57 +6,102 @@ RSpec.describe 'Orchestras Index' do
                                      city:          "New York City",
                                      hiring:        true,
                                      max_musicians: 100)
-    @orchestra_2 = Orchestra.create!(name:          "Boston Pops",
-                                     city:          "Boston",
-                                     hiring:        false,
-                                     max_musicians: 120)
+
   end
 
-  it '#name' do
-    visit "/orchestras/"
+  describe 'as a visitor' do
+    describe 'when I visit the orchestras index page' do
+      it 'can create a new composer' do
+        visit '/orchestras'
 
-    expect(page).to have_content(@orchestra_1.name)
-    expect(page).to have_content(@orchestra_2.name)
-  end
+        click_link 'New Orchestra'
 
-  it '#home' do
-    visit "/orchestras/"
+        expect(current_path).to eq("/orchestras/new")
 
-    expect(page).to have_link("Home")
-  end
+        fill_in 'orchestra[name]', with: 'New York Philharmonic'
+        fill_in 'orchestra[city]', with: 'New York City'
+        fill_in 'orchestra[hiring]', with: true
+        fill_in 'orchestra[max_musicians]', with: 100
 
-  it '#new' do
-    visit "/orchestras/"
+        click_button
 
-    expect(page).to have_link("New Orchestra")
-  end
+        expect(current_path).to eq('/orchestras')
+        expect(page).to have_content('New York Philharmonic')
+      end
 
-  it 'show created at time' do
-    visit "/orchestras/"
+      xit 'can update a composer' do
+        visit '/composers'
 
-    expect(page).to have_content("#{@orchestra_1.created_at}")
-    expect(page).to have_content("#{@orchestra_2.created_at}")
-  end
+        click_link('Edit', match: :first)
 
-  it 'nav' do
-    visit "/orchestras/"
+        expect(current_path).to eq("/composers/#{@composer_1.id}/edit")
 
-    expect(page).to have_link("Home")
-    expect(page).to have_link("Orchestras")
-    expect(page).to have_link("Musicians")
-    expect(page).to have_link("Composers")
-    expect(page).to have_link("Songs")
-  end
+        fill_in 'composer[name]', with: 'Bob'
+        fill_in 'composer[nationality]', with: 'Canadian'
+        fill_in 'composer[active]', with: true
+        fill_in 'composer[total_songs]', with: 100
 
-  it 'edit' do
-    visit "/orchestras/"
+        click_button
 
-    expect(page).to have_link("Edit")
-  end
+        expect(current_path).to eq("/composers/#{@composer_1.id}")
+        expect(page).to have_content('Bob')
+      end
 
-  it 'delete' do
-    visit "/orchestras/"
+      xit 'can delete a composer' do
+        visit '/composers'
 
-    expect(page).to have_button("Delete")
+        save_and_open_page
+        click_button('Delete', match: :first)
+
+        expect(current_path).to eq("/composers")
+        expect(current_path).to_not have_content(@composer_1.name)
+        expect(page).to_not have_button('Delete')
+      end
+      it '#name' do
+        visit "/orchestras/"
+
+        expect(page).to have_content(@orchestra_1.name)
+      end
+
+      it '#home' do
+        visit "/orchestras/"
+
+        expect(page).to have_link("Home")
+      end
+
+      it '#new' do
+        visit "/orchestras/"
+
+        expect(page).to have_link("New Orchestra")
+      end
+
+      it 'show created at time' do
+        visit "/orchestras/"
+
+        expect(page).to have_content("#{@orchestra_1.created_at}")
+      end
+
+      it 'nav' do
+        visit "/orchestras/"
+
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Orchestras")
+        expect(page).to have_link("Musicians")
+        expect(page).to have_link("Composers")
+        expect(page).to have_link("Songs")
+      end
+
+      it 'edit' do
+        visit "/orchestras/"
+
+        expect(page).to have_link("Edit")
+      end
+
+      it 'delete' do
+        visit "/orchestras/"
+
+        expect(page).to have_button("Delete")
+      end
+    end
   end
 end
