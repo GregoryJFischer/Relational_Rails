@@ -9,14 +9,12 @@
   <a href="/musicians/<%= @musician.id %>"><%= @musician.name %></a>
 </nav><br/>
 
-<form method="post" action="/musicians/<%= @musician.id %>">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="PATCH" />
-  <p>Name:</p>
-  <input type="text" name='musician[name]'/><br/>
-  <p>Age:</p>
-  <input type="text" name='musician[age]'/><br>
-  <p>Hirable?</p>
-  <input type="text" name='musician[hirable]'/><br/>
-  <input type='submit'/>
-</form>
+<%= form_with url: "/musicians/#{@musician.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name, "Name:" %><br/>
+  <%= form.text_field :name %><br/><br/>
+  <%= form.label :age, "Age:" %><br/>
+  <%= form.text_field :age%><br/><br/>
+  <%= form.label :hirable, "Hirable?"%><br/>
+  <%= form.text_field :hirable %><br/><br/>
+  <%= form.submit "Sumbit" %>
+<% end %>
