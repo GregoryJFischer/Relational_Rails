@@ -50,7 +50,6 @@ RSpec.describe 'Composers Index' do
       it 'can delete a composer' do
         visit '/composers'
 
-        save_and_open_page
         click_button('Delete', match: :first)
 
         expect(current_path).to eq("/composers")

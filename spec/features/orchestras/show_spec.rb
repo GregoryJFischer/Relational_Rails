@@ -57,7 +57,6 @@ RSpec.describe 'the orchestras show page' do
       it 'can delete an orchestra' do
         visit "/orchestras/#{@orchestra_1.id}"
 
-        save_and_open_page
         click_button('Delete', match: :first)
 
         expect(current_path).to eq("/orchestras")
@@ -80,5 +79,5 @@ RSpec.describe 'the orchestras show page' do
         expect(page).to have_button("Delete")
       end
     end
-  end 
+  end
 end

@@ -53,7 +53,6 @@ RSpec.describe 'Songs Index' do
       it 'can delete a song' do
         visit '/songs'
 
-        save_and_open_page
         click_button('Delete', match: :first)
 
         expect(current_path).to eq("/songs")

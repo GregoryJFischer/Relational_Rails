@@ -49,7 +49,6 @@ RSpec.describe 'Orchestras Index' do
       it 'can delete an orchestra' do
         visit '/orchestras'
 
-        save_and_open_page
         click_button('Delete', match: :first)
 
         expect(current_path).to eq("/orchestras")

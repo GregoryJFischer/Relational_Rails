@@ -45,7 +45,6 @@ RSpec.describe 'the musicians show page' do
       it 'can delete a musician' do
         visit "/musicians/#{@musician_1.id}"
 
-        save_and_open_page
         click_button('Delete', match: :first)
 
         expect(current_path).to eq("/musicians")
