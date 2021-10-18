@@ -15,16 +15,16 @@ RSpec.describe 'Songs Index' do
   describe 'as a visitor' do
     describe 'when I visit the songs index page' do
       it 'can create a new song' do
-        visit '/orchestras'
+        visit '/songs'
 
         click_link 'New Song'
 
         expect(current_path).to eq("/songs/new")
 
-        fill_in 'song[composer_id]', with: @composer.id
-        fill_in 'song[name]', with: 'Symphony No. 1 in C'
-        fill_in 'song[public_domain]', with: true
-        fill_in 'song[year_composed]', with: 1800
+        fill_in 'Composer ID', with: @composer.id
+        fill_in 'Name', with: 'Symphony No. 1 in C'
+        fill_in 'Is Public Domain?', with: true
+        fill_in 'Year Composed', with: 1800
 
         click_button
 
@@ -39,10 +39,9 @@ RSpec.describe 'Songs Index' do
 
         expect(current_path).to eq("/songs/#{@song_1.id}/edit")
 
-        fill_in 'song[composer_id]', with: @composer.id
-        fill_in 'song[name]', with: 'Etude in G'
-        fill_in 'song[public_domain]', with: false
-        fill_in 'song[year_composed]', with: 1950
+        fill_in 'Name', with: 'Etude in G'
+        fill_in 'Year Composed', with: false
+        fill_in 'Public Domain?', with: 1950
 
         click_button
 
@@ -50,14 +49,14 @@ RSpec.describe 'Songs Index' do
         expect(page).to have_content('Etude in G')
       end
 
-      xit 'can delete an orchestra' do
-        visit '/orchestras'
+      it 'can delete a song' do
+        visit '/songs'
 
         save_and_open_page
         click_button('Delete', match: :first)
 
-        expect(current_path).to eq("/orchestras")
-        expect(current_path).to_not have_content(@orchestra_1.name)
+        expect(current_path).to eq("/songs")
+        expect(current_path).to_not have_content(@song_1.name)
         expect(page).to_not have_button('Delete')
       end
 

@@ -10,57 +10,97 @@ RSpec.describe 'Musicians Index' do
                                   hirable:      true,
                                   age:          22,
                                   orchestra_id: @orchestra.id)
-    @musician_2 = Musician.create(name:         "Michael Scott",
-                                  hirable:      false,
-                                  age:          50,
-                                  orchestra_id: @orchestra.id)
   end
 
-  it '#attributes' do
-    visit "/musicians/"
+  describe 'as a visitor' do
+    describe 'when I visit the songs index page' do
+      it 'can create a new song' do
+        visit '/songs'
 
-    expect(page).to have_content(@musician_1.name)
-    expect(page).to have_content(@musician_1.hirable)
-    expect(page).to have_content(@musician_1.age)
-    expect(page).to have_no_content(@musician_2)
+        click_link 'New Song'
 
-    # expect(page).to have_content(@musician_2.name)
-    # expect(page).to have_content(@musician_2.hirable)
-    # expect(page).to have_content(@musician_2.age)
-    # expect(page).to have_no_content(@musician_1)
-  end
+        expect(current_path).to eq("/songs/new")
 
-  it '#home' do
-    visit "/musicians/"
+        fill_in 'Composer ID', with: @composer.id
+        fill_in 'Name', with: 'Symphony No. 1 in C'
+        fill_in 'Is Public Domain?', with: true
+        fill_in 'Year Composed', with: 1800
 
-    expect(page).to have_link("Home")
-  end
+        click_button
 
-  it '#new' do
-    visit "/musicians/"
+        expect(current_path).to eq('/songs')
+        expect(page).to have_content('Symphony No. 1 in C')
+      end
 
-    expect(page).to have_link("New Musician")
-  end
+      it 'can update a song' do
+        visit '/songs'
 
-  it 'nav' do
-    visit "/musicians/"
+        click_link('Edit', match: :first)
 
-    expect(page).to have_link("Home")
-    expect(page).to have_link("Orchestras")
-    expect(page).to have_link("Musicians")
-    expect(page).to have_link("Composers")
-    expect(page).to have_link("Songs")
-  end
+        expect(current_path).to eq("/songs/#{@song_1.id}/edit")
 
-  it 'edit' do
-    visit "/musicians/"
+        fill_in 'Name', with: 'Etude in G'
+        fill_in 'Year Composed', with: false
+        fill_in 'Public Domain?', with: 1950
 
-    expect(page).to have_link("Edit")
-  end
+        click_button
 
-  it 'delete' do
-    visit "/musicians/"
+        expect(current_path).to eq("/songs/#{@song_1.id}")
+        expect(page).to have_content('Etude in G')
+      end
 
-    expect(page).to have_button("Delete")
+      it 'can delete a song' do
+        visit '/songs'
+
+        save_and_open_page
+        click_button('Delete', match: :first)
+
+        expect(current_path).to eq("/songs")
+        expect(current_path).to_not have_content(@song_1.name)
+        expect(page).to_not have_button('Delete')
+      end
+
+      it '#attributes' do
+        visit "/musicians/"
+
+        expect(page).to have_content(@musician_1.name)
+        expect(page).to have_content(@musician_1.hirable)
+        expect(page).to have_content(@musician_1.age)
+      end
+
+      it '#home' do
+        visit "/musicians/"
+
+        expect(page).to have_link("Home")
+      end
+
+      it '#new' do
+        visit "/musicians/"
+
+        expect(page).to have_link("New Musician")
+      end
+
+      it 'nav' do
+        visit "/musicians/"
+
+        expect(page).to have_link("Home")
+        expect(page).to have_link("Orchestras")
+        expect(page).to have_link("Musicians")
+        expect(page).to have_link("Composers")
+        expect(page).to have_link("Songs")
+      end
+
+      it 'edit' do
+        visit "/musicians/"
+
+        expect(page).to have_link("Edit")
+      end
+
+      it 'delete' do
+        visit "/musicians/"
+
+        expect(page).to have_button("Delete")
+      end
+    end
   end
 end

@@ -6,7 +6,6 @@ RSpec.describe 'Orchestras Index' do
                                      city:          "New York City",
                                      hiring:        true,
                                      max_musicians: 100)
-
   end
 
   describe 'as a visitor' do
@@ -18,10 +17,10 @@ RSpec.describe 'Orchestras Index' do
 
         expect(current_path).to eq("/orchestras/new")
 
-        fill_in 'orchestra[name]', with: 'New York Philharmonic'
-        fill_in 'orchestra[city]', with: 'New York City'
-        fill_in 'orchestra[hiring]', with: true
-        fill_in 'orchestra[max_musicians]', with: 100
+        fill_in 'Name', with: 'New York Philharmonic'
+        fill_in 'City', with: 'New York City'
+        fill_in 'Is Hiring?', with: true
+        fill_in 'Max Number of Musicians', with: 100
 
         click_button
 
@@ -36,10 +35,10 @@ RSpec.describe 'Orchestras Index' do
 
         expect(current_path).to eq("/orchestras/#{@orchestra_1.id}/edit")
 
-        fill_in 'orchestra[name]', with: 'New York Orchestra'
-        fill_in 'orchestra[city]', with: 'New York'
-        fill_in 'orchestra[hiring]', with: false
-        fill_in 'orchestra[max_musicians]', with: 100
+        fill_in 'Name', with: 'New York Orchestra'
+        fill_in 'City', with: 'New York'
+        fill_in 'Is Hiring', with: false
+        fill_in 'Max Number of Musicians', with: 100
 
         click_button
 
