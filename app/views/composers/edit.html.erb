@@ -9,16 +9,14 @@
   <a href="/composers/<%= @composer.id %>"><%= @composer.name %></a>
 </nav><br/>
 
-<form method="post" action="/composers/<%= @composer.id %>">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="PATCH" />
-  <p>Name:</p>
-  <input type="text" name='composer[name]'/><br/>
-  <p>Nationality:</p>
-  <input type="text" name='composer[nationality]'/><br>
-  <p>Is currently active?</p>
-  <input type="text" name='composer[active]'/><br/>
-  <p>Total Songs:</p>
-  <input type="text" name='composer[total_songs]'/><br/><br/>
-  <input type='submit'/>
-</form>
+<%= form_with url: "/composers/#{@composer.id}", method: :patch, local: true do |form|  %>
+  <%= form.label :name, "Name:" %><br/>
+  <%= form.text_field :name %><br/><br/>
+  <%= form.label :nationality, "Nationality:" %><br/>
+  <%= form.text_field :nationality %><br/><br/>
+  <%= form.label :active, "Is currently active?" %><br/>
+  <%= form.text_field :active %><br/><br/>
+  <%= form.label :total_songs, "Total Songs:" %><br/>
+  <%= form.text_field :total_songs%><br/><br/>
+  <%= form.submit 'Submit' %>
+<% end %>
