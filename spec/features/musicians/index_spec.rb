@@ -13,50 +13,50 @@ RSpec.describe 'Musicians Index' do
   end
 
   describe 'as a visitor' do
-    describe 'when I visit the songs index page' do
-      it 'can create a new song' do
-        visit '/songs'
+    describe 'when I visit the musicians index page' do
+      it 'can create a new musician' do
+        visit '/musicians'
 
-        click_link 'New Song'
+        click_link 'New Musician'
 
-        expect(current_path).to eq("/songs/new")
+        expect(current_path).to eq("/musicians/new")
 
-        fill_in 'Composer ID', with: @composer.id
-        fill_in 'Name', with: 'Symphony No. 1 in C'
-        fill_in 'Is Public Domain?', with: true
-        fill_in 'Year Composed', with: 1800
+        fill_in 'Orchestra ID', with: @orchestra.id
+        fill_in 'Name', with: 'Nancy Drew'
+        fill_in 'Is Looking for Work?', with: true
+        fill_in 'Age', with: 22
 
         click_button
 
-        expect(current_path).to eq('/songs')
-        expect(page).to have_content('Symphony No. 1 in C')
+        expect(current_path).to eq('/musicians')
+        expect(page).to have_content('Nancy Drew')
       end
 
-      it 'can update a song' do
-        visit '/songs'
+      it 'can update a musician' do
+        visit '/musicians'
 
         click_link('Edit', match: :first)
 
-        expect(current_path).to eq("/songs/#{@song_1.id}/edit")
+        expect(current_path).to eq("/musicians/#{@musician_1.id}/edit")
 
-        fill_in 'Name', with: 'Etude in G'
-        fill_in 'Year Composed', with: false
-        fill_in 'Public Domain?', with: 1950
+        fill_in 'Name', with: 'Ben LaGue'
+        fill_in 'Age', with: 32
+        fill_in 'Hirable?', with: false
 
         click_button
 
-        expect(current_path).to eq("/songs/#{@song_1.id}")
-        expect(page).to have_content('Etude in G')
+        expect(current_path).to eq("/musicians/#{@musician_1.id}")
+        expect(page).to have_content('Ben LaGue')
       end
 
-      it 'can delete a song' do
-        visit '/songs'
+      it 'can delete a musician' do
+        visit '/musicians'
 
         save_and_open_page
         click_button('Delete', match: :first)
 
-        expect(current_path).to eq("/songs")
-        expect(current_path).to_not have_content(@song_1.name)
+        expect(current_path).to eq("/musicians")
+        expect(current_path).to_not have_content(@musician_1.name)
         expect(page).to_not have_button('Delete')
       end
 
