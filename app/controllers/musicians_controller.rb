@@ -8,10 +8,10 @@ class MusiciansController < ApplicationController
 
   def create
     musician = Musician.new({
-      orchestra_id: params[:musician][:orchestra_id],
-      name: params[:musician][:name],
-      hirable: params[:musician][:hirable],
-      age: params[:musician][:age],
+      orchestra_id: params[:orchestra_id],
+      name: params[:name],
+      hirable: params[:hirable],
+      age: params[:age],
       created_at: Time.now,
       updated_at: Time.now
       })
@@ -32,10 +32,10 @@ class MusiciansController < ApplicationController
   def update
     musician = Musician.find(params[:id])
     musician.update({
-      orchestra_id: params[:musician][:orchestra_id],
-      name: params[:musician][:name],
-      hirable: params[:musician][:hirable],
-      age: params[:musician][:age],
+      orchestra_id: params[:orchestra_id],
+      name: params[:name],
+      hirable: params[:hirable],
+      age: params[:age],
       updated_at: Time.now
       })
 

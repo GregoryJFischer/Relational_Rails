@@ -8,16 +8,15 @@
   <a href="/songs/">Songs</a>
 </nav><br/>
 
-<form method="post" action="/composers">
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-  <h4>Enter a New Composer</h4>
-  <p>Name:</p>
-  <input type="text" name='composer[name]'/><br/>
-  <p>Nationality:</p>
-  <input type="text" name='composer[nationality]'/><br/>
-  <p>Is Active?</p>
-  <input type="text" name='composer[active]'/><br/>
-  <p>Total Songs:</p>
-  <input type="text" name='composer[total_songs]'/><br/><br/>
-  <input type='submit'/>
-</form>
+<h4>Enter a New Composer</h4>
+<%= form_with url: "/composers", method: :post, local: true do |form| %>
+  <%= form.label :name, "Name:" %><br/>
+  <%= form.text_field :name%><br/><br/>
+  <%= form.label :nationality, "Nationality:" %><br/>
+  <%= form.text_field :nationality %><br/><br/>
+  <%= form.label :active, "Is Active?" %><br/>
+  <%= form.text_field :active %><br/><br/>
+  <%= form.label :total_songs, "Total Songs:" %><br/>
+  <%= form.text_field :total_songs%><br/><br/>
+  <%= form.submit 'Submit' %>
+<% end %>

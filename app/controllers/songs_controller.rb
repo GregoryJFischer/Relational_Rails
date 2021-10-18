@@ -8,10 +8,10 @@ class SongsController < ApplicationController
 
   def create
     song = Song.new({
-      composer_id: params[:song][:composer_id],
-      name: params[:song][:name],
-      public_domain: params[:song][:public_domain],
-      year_composed: params[:song][:year_composed],
+      composer_id: params[:composer_id],
+      name: params[:name],
+      public_domain: params[:public_domain],
+      year_composed: params[:year_composed],
       created_at: Time.now,
       updated_at: Time.now
       })
@@ -32,10 +32,10 @@ class SongsController < ApplicationController
   def update
     song = Song.find(params[:id])
     song.update({
-      composer_id: params[:song][:composer_id],
-      name: params[:song][:name],
-      public_domain: params[:song][:public_domain],
-      year_composed: params[:song][:year_composed],
+      composer_id: params[:composer_id],
+      name: params[:name],
+      public_domain: params[:public_domain],
+      year_composed: params[:year_composed],
       updated_at: Time.now
       })
 

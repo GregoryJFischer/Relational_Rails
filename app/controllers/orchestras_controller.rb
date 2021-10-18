@@ -8,10 +8,10 @@ class OrchestrasController < ApplicationController
 
   def create
     orchestra = Orchestra.new({
-      name: params[:orchestra][:name],
-      city: params[:orchestra][:city],
-      hiring: params[:orchestra][:hiring],
-      max_musicians: params[:orchestra][:max_musicians],
+      name: params[:name],
+      city: params[:city],
+      hiring: params[:hiring],
+      max_musicians: params[:max_musicians],
       created_at: Time.now,
       updated_at: Time.now
       })
@@ -32,10 +32,10 @@ class OrchestrasController < ApplicationController
   def update
     orchestra = Orchestra.find(params[:id])
     orchestra.update({
-      name: params[:orchestra][:name],
-      city: params[:orchestra][:city],
-      hiring: params[:orchestra][:hiring],
-      max_musicians: params[:orchestra][:max_musicians],
+      name: params[:name],
+      city: params[:city],
+      hiring: params[:hiring],
+      max_musicians: params[:max_musicians],
       updated_at: Time.now
       })
 

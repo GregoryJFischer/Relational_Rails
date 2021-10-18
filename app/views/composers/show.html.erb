@@ -16,8 +16,6 @@ Nationality: <%= @composer.nationality %><br/>
 Total Songs: <%= @composer.total_songs %>
 Number of songs available: <%= @composer.songs.count %><br/>
 
-<form action="/composers/<%= @composer.id %>" method="POST">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete"/>
-</form>
+<%= form_with url: "/composers/#{@composer.id}", method: :delete, local: true do |form| %>
+  <%= form.submit 'Delete' %>
+<% end %>

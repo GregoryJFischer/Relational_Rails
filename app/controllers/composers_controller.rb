@@ -8,10 +8,10 @@ class ComposersController < ApplicationController
 
   def create
     composer = Composer.new({
-      name: params[:composer][:name],
-      nationality: params[:composer][:nationality],
-      active: params[:composer][:active],
-      total_songs: params[:composer][:total_songs],
+      name: params[:name],
+      nationality: params[:nationality],
+      active: params[:active],
+      total_songs: params[:total_songs],
       created_at: Time.now,
       updated_at: Time.now
       })
@@ -32,10 +32,10 @@ class ComposersController < ApplicationController
   def update
     composer = Composer.find(params[:id])
     composer.update({
-      name: params[:composer][:name],
-      nationality: params[:composer][:nationality],
-      active: params[:composer][:active],
-      total_songs: params[:composer][:total_songs],
+      name: params[:name],
+      nationality: params[:nationality],
+      active: params[:active],
+      total_songs: params[:total_songs],
       updated_at: Time.now
       })
 
