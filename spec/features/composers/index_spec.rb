@@ -18,10 +18,10 @@ RSpec.describe 'Composers Index' do
 
         expect(current_path).to eq("/composers/new")
 
-        fill_in 'composer[name]', with: 'Ludwig von Beethoven'
-        fill_in 'composer[nationality]', with: 'German'
-        fill_in 'composer[active]', with: false
-        fill_in 'composer[total_songs]', with: 722
+        fill_in 'Name', with: 'Ludwig von Beethoven'
+        fill_in 'Nationality', with: 'German'
+        fill_in 'Is Active?', with: false
+        fill_in 'Total Songs', with: 722
 
         click_button
 
@@ -36,10 +36,10 @@ RSpec.describe 'Composers Index' do
 
         expect(current_path).to eq("/composers/#{@composer_1.id}/edit")
 
-        fill_in 'composer[name]', with: 'Bob'
-        fill_in 'composer[nationality]', with: 'Canadian'
-        fill_in 'composer[active]', with: true
-        fill_in 'composer[total_songs]', with: 100
+        fill_in 'Name', with: 'Bob'
+        fill_in 'Nationality', with: 'Canadian'
+        fill_in 'Is currently active?', with: true
+        fill_in 'Total Songs', with: 100
 
         click_button
 

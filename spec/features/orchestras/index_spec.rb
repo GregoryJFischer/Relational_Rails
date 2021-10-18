@@ -11,7 +11,7 @@ RSpec.describe 'Orchestras Index' do
 
   describe 'as a visitor' do
     describe 'when I visit the orchestras index page' do
-      it 'can create a new composer' do
+      it 'can create a new orchestra' do
         visit '/orchestras'
 
         click_link 'New Orchestra'
@@ -57,7 +57,7 @@ RSpec.describe 'Orchestras Index' do
         expect(current_path).to_not have_content(@orchestra_1.name)
         expect(page).to_not have_button('Delete')
       end
-      
+
       it '#name' do
         visit "/orchestras/"
 
