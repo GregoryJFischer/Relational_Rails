@@ -40,7 +40,7 @@ class ComposersController < ApplicationController
       })
 
     composer.save
-    redirect_to "/coposers/#{composer.id}"
+    redirect_to "/composers/#{composer.id}"
   end
 
   def destroy
