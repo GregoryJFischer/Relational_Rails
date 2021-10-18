@@ -9,17 +9,15 @@
   <a href="/musicians/">Musicians Index</a>
 </nav><br/>
 
-
-<form method="post" action="/musicians">
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-  <h4>Enter a New Musician</h4>
-  <p>Orchestra ID:</p>
-  <input type="text" name='musician[orchestra_id]'/><br/>
-  <p>Name:</p>
-  <input type="text" name='musician[name]'/><br/>
-  <p>Is Looking for Work?</p>
-  <input type="text" name='musician[hirable]'/><br/>
-  <p>Age:</p>
-  <input type="text" name='musician[age]'/><br/><br/>
-  <input type='submit'/>
-</form>
+<h4>Enter a New Musician</h4>
+<%= form_with url: "/musicians", method: :post, local: true do |form|%>
+  <%= form.label :orchestra_id, "Orchestra ID:" %><br/>
+  <%= form.text_field :orchestra_id%><br/><br/>
+  <%= form.label :name, "Name:"%><br/>
+  <%= form.text_field :name%><br/><br/>
+  <%= form.label :hirable, "Is Looking for Work?"%><br/>
+  <%= form.text_field :hirable%><br/><br/>
+  <%= form.label :age, "Age:"%><br/>
+  <%= form.text_field :age%><br/><br/>
+  <%= form.submit "Sumbit"%>
+<% end %>
