@@ -21,9 +21,9 @@ RSpec.describe 'Songs Index' do
 
         expect(current_path).to eq("/songs/new")
 
-        fill_in 'Composer ID', with: @composer.id
+        fill_in 'Composer ID', with: "#{@composer.id}"
         fill_in 'Name', with: 'Symphony No. 1 in C'
-        fill_in 'Is Public Domain?', with: true
+        fill_in 'Public Domain?', with: true
         fill_in 'Year Composed', with: 1800
 
         click_button
@@ -39,6 +39,7 @@ RSpec.describe 'Songs Index' do
 
         expect(current_path).to eq("/songs/#{@song_1.id}/edit")
 
+        fill_in 'Composer ID', with: "#{@composer.id}"
         fill_in 'Name', with: 'Etude in G'
         fill_in 'Year Composed', with: false
         fill_in 'Public Domain?', with: 1950

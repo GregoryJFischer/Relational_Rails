@@ -10,8 +10,8 @@
 <h4>Enter a New Song</h4>
 
 <%= form_with url: "/songs", method: :post, local: true do |form|%>
-  <%= form.label :composer_id, "Composer Id:"%><br/>
-  <%= form.text_field :composer_id%><br/><br/>  
+  <%= form.label :composer_id, "Composer ID:"%><br/>
+  <%= form.text_field :composer_id%><br/><br/>
   <%= form.label :name, "Name:" %><br/>
   <%= form.text_field :name%><br/><br/>
   <%= form.label :year_composed, "Year Composed:" %><br/>

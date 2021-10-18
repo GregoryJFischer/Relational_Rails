@@ -21,7 +21,7 @@ RSpec.describe 'Musicians Index' do
 
         expect(current_path).to eq("/musicians/new")
 
-        fill_in 'Orchestra ID', with: @orchestra.id
+        fill_in 'Orchestra ID', with: "#{@orchestra.id}"
         fill_in 'Name', with: 'Nancy Drew'
         fill_in 'Is Looking for Work?', with: true
         fill_in 'Age', with: 22
@@ -39,6 +39,7 @@ RSpec.describe 'Musicians Index' do
 
         expect(current_path).to eq("/musicians/#{@musician_1.id}/edit")
 
+        fill_in 'Orchestra ID', with: "#{@orchestra.id}"
         fill_in 'Name', with: 'Ben LaGue'
         fill_in 'Age', with: 32
         fill_in 'Hirable?', with: false
