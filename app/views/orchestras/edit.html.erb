@@ -9,16 +9,14 @@
   <a href="/orchestras/<%= @orchestra.id %>"><%= @orchestra.name %></a>
 </nav><br/>
 
-<form method="post" action="/orchestras/<%= @orchestra.id %>">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="PATCH" />
-  <p>Name:</p>
-  <input type="text" name='orchestra[name]'/><br/>
-  <p>City:</p>
-  <input type="text" name='orchestra[city]'/><br>
-  <p>Is Hiring?</p>
-  <input type="text" name='orchestra[hiring]'/><br/>
-  <p>Max Number of Musicians:</p>
-  <input type="text" name='orchestra[max_musicians]'/><br/><br/>
-  <input type='submit'/>
-</form>
+<%= form_with url: "/orchestras/#{@orchestra.id}", method: :patch, local: true do |form|%>
+  <%= form.label :name, "Name:" %><br/>
+  <%= form.text_field :name %><br/><br/>
+  <%= form.label :city, "City:" %><br/>
+  <%= form.text_field :city %><br/><br/>
+  <%= form.label :hiring, "Is Hiring?" %><br/>
+  <%= form.text_field :hiring %><br/><br/>
+  <%= form.label :max_musicians, "Max Number of Musicians:" %><br/>
+  <%= form.text_field :max_musicians %><br/><br/>
+  <%= form.submit "Submit" %>
+<% end %>
