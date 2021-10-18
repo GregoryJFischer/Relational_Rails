@@ -12,6 +12,27 @@ RSpec.describe 'Composers Index' do
                                    total_songs: 100)
   end
 
+  describe 'as a visitor' do
+    describe 'when I visit the composers index page' do
+      it 'can create a new composer' do
+        visit '/composers'
+
+        click_link 'New Composer'
+
+        expect(current_path).to eq('/composers/new')
+
+        fill_in 'composer[name]', with: 'Ludwig von Beethoven'
+        fill_in 'composer[nationality]', with: 'German'
+        fill_in 'composer[active]', with: false
+        fill_in 'composer[total_songs]', with: 722
+
+        click_button
+
+        expect(current_path).to eq('/composers')
+        expect(page).to have_content('Ludwig von Beethoven')
+      end
+    end
+  end
   it '#name' do
     visit "/composers/"
 
@@ -59,4 +80,5 @@ RSpec.describe 'Composers Index' do
 
     expect(page).to have_button("Delete")
   end
+
 end
