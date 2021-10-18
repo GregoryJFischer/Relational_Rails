@@ -7,17 +7,16 @@
   <a href="/composers/">Composers</a> |
   <a href="/songs/">Songs</a>
 </nav><br/>
+<h4>Enter a New Song</h4>
 
-<form method="post" action="/songs">
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-  <h4>Enter a New Song</h4>
-  <p>Composer ID:</p>
-  <input type="text" name='song[composer_id]'/><br/>
-  <p>Name:</p>
-  <input type="text" name='song[name]'/><br/>
-  <p>Is Public Domain?</p>
-  <input type="text" name='song[public_domain]'/><br/>
-  <p>Year Composed:</p>
-  <input type="text" name='song[year_composed]'/><br/><br/>
-  <input type='submit'/>
-</form>
+<%= form_with url: "/songs", method: :post, local: true do |form|%>
+  <%= form.label :composer_id, "Composer Id:"%><br/>
+  <%= form.text_field :composer_id%><br/><br/>  
+  <%= form.label :name, "Name:" %><br/>
+  <%= form.text_field :name%><br/><br/>
+  <%= form.label :year_composed, "Year Composed:" %><br/>
+  <%= form.text_field :year_composed %><br/><br/>
+  <%= form.label :public_domain, "Public Domain?" %><br/>
+  <%= form.text_field :public_domain %><br/><br/>
+  <%= form.submit "Submit"%>
+<% end %>
