@@ -29,34 +29,35 @@ RSpec.describe 'Orchestras Index' do
         expect(page).to have_content('New York Philharmonic')
       end
 
-      xit 'can update a composer' do
-        visit '/composers'
+      it 'can update an orchestra' do
+        visit '/orchestras'
 
         click_link('Edit', match: :first)
 
-        expect(current_path).to eq("/composers/#{@composer_1.id}/edit")
+        expect(current_path).to eq("/orchestras/#{@orchestra_1.id}/edit")
 
-        fill_in 'composer[name]', with: 'Bob'
-        fill_in 'composer[nationality]', with: 'Canadian'
-        fill_in 'composer[active]', with: true
-        fill_in 'composer[total_songs]', with: 100
+        fill_in 'orchestra[name]', with: 'New York Orchestra'
+        fill_in 'orchestra[city]', with: 'New York'
+        fill_in 'orchestra[hiring]', with: false
+        fill_in 'orchestra[max_musicians]', with: 100
 
         click_button
 
-        expect(current_path).to eq("/composers/#{@composer_1.id}")
-        expect(page).to have_content('Bob')
+        expect(current_path).to eq("/orchestras/#{@orchestra_1.id}")
+        expect(page).to have_content('New York Orchestra')
       end
 
-      xit 'can delete a composer' do
-        visit '/composers'
+      it 'can delete an orchestra' do
+        visit '/orchestras'
 
         save_and_open_page
         click_button('Delete', match: :first)
 
-        expect(current_path).to eq("/composers")
-        expect(current_path).to_not have_content(@composer_1.name)
+        expect(current_path).to eq("/orchestras")
+        expect(current_path).to_not have_content(@orchestra_1.name)
         expect(page).to_not have_button('Delete')
       end
+      
       it '#name' do
         visit "/orchestras/"
 
