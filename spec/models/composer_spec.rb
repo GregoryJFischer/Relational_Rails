@@ -23,4 +23,11 @@ RSpec.describe Composer do
   it '#order_name' do
     expect(Composer.order_name.first).to eq @composer
   end
+
+  it '#order_created_at' do
+    composer_2 = Composer.create!(name: "bob")
+    
+    expect(Composer.order_created_at.first).to eq @composer
+    expect(Composer.order_created_at.last).to eq composer_2
+  end
 end

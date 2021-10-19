@@ -21,4 +21,9 @@ RSpec.describe Orchestra do
     expect(Orchestra.order_name.first).to eq @orchestra_1
     expect(Orchestra.order_name.last).to eq @orchestra_3
   end
+
+  it '#order_created_at' do
+    expect(Orchestra.order_created_at.first).to eq @orchestra_1
+    expect(Orchestra.order_created_at.last).to eq @orchestra_3
+  end
 end
