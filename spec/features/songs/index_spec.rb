@@ -112,6 +112,19 @@ RSpec.describe 'Songs Index' do
 
         expect(page).to have_button("Delete")
       end
+
+      it 'can limit songs by year' do
+        visit "/songs"
+
+        expect(page).to have_content("Limit Results to More Recent than Year:")
+
+        fill_in "Limit Results to More Recent than Year", with: "1700"
+        
+        click_button("Limit")
+
+        expect(page).to have_content("Symphony No. 1 in C")
+        expect(page).to_not have_content("Second Song")
+      end
     end
   end
 end
