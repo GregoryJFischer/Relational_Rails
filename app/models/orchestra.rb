@@ -6,4 +6,8 @@ class Orchestra < ApplicationRecord
   def self.order_name
     Orchestra.order(:name)
   end
+
+  def self.order_created_at
+    Orchestra.order(:created_at)
+  end
 end

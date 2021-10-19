@@ -6,10 +6,11 @@
   <a href="/musicians/">Musicians</a> |
   <a href="/composers/">Composers</a> |
   <a href="/songs/">Songs</a> |
-  <a href="/songs/new">New Song</a>
+  <a href="/songs/new">New Song</a> |
+  <a href="/songs?order=true">Sort by Name</a>
 </nav><br/>
 
-<% @songs.true?.each do |song| %>
+<% @songs.each do |song| %>
   <a href="/songs/<%= song.id %>"><%= song.name %></a> |
   <a href="/songs/<%=song.id%>/edit">Edit</a>
   <br/>

@@ -1,6 +1,10 @@
 class MusiciansController < ApplicationController
   def index
-    @musicians = Musician.all
+    if params[:order] == "true"
+      @musicians = Musician.order_name.true?
+    else
+      @musicians = Musician.all.true?
+    end
   end
 
   def new

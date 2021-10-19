@@ -9,9 +9,10 @@
   <a href="/composers/new">New Composer</a>
 </nav><br/>
 
-<% @composers.order(:created_at).each do |composer| %>
+<% @composers.each do |composer| %>
   <a href="/composers/<%= composer.id %>"><%= composer.name %></a>,
   Created: <%=composer.created_at%> |
+  ID: <%=composer.id%> |
   <a href="/composers/<%=composer.id%>/edit">Edit</a> |
   <%= form_with url: "/composers/#{composer.id}", method: :delete, local: true do |form| %>
     <%= form.submit 'Delete' %>

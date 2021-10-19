@@ -9,9 +9,10 @@
   <a href="/orchestras/new">New Orchestra</a>
 </nav><br/>
 
-<% @orchestras.order(:created_at).each do |orchestra| %>
+<% @orchestras.each do |orchestra| %>
   <a href="/orchestras/<%=orchestra.id%>"><%=orchestra.name%></a>,
   Created: <%=orchestra.created_at%> |
+  ID: <%=orchestra.id%> |
   <a href="/orchestras/<%=orchestra.id%>/edit">Edit</a> |
   <%= form_with url: "/orchestras/#{orchestra.id}", method: :delete, local: true do |form|%>
     <%= form.submit "Delete" %>

@@ -1,6 +1,10 @@
 class SongsController < ApplicationController
   def index
-    @songs = Song.all
+    if params[:order] == "true"
+      @songs = Song.order_name.true?
+    else
+      @songs = Song.all.true?
+    end
   end
 
   def new
