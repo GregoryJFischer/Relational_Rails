@@ -10,4 +10,8 @@ class Song < ApplicationRecord
   def self.order_name
     Song.order(:name)
   end
+
+  def self.modern_check(input)
+    Song.where("year_composed > #{input}")
+  end
 end

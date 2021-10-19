@@ -12,7 +12,7 @@ RSpec.describe Song do
                           composer_id:   @composer.id)
     @song_2 = Song.create(name:         "String Quartet No. 3 in D",
                           public_domain: false,
-                          year_composed: 1799,
+                          year_composed: 1798,
                           composer_id:   @composer.id)
   end
   it {should belong_to :composer}
@@ -26,5 +26,9 @@ RSpec.describe Song do
   it 'order_name' do
     expect(Song.order_name.first).to eq @song_2
     expect(Song.order_name.last).to eq @song_1
+  end
+
+  it 'can limit songs by how old they are' do
+    expect(Song.modern_check(1799)).to eq([@song_1])
   end
 end
