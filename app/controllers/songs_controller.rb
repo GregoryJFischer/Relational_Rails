@@ -2,6 +2,8 @@ class SongsController < ApplicationController
   def index
     if params[:order] == "true"
       @songs = Song.order_name.true?
+    elsif params[:year] != nil
+      @songs = Song.modern_check(params[:year])
     else
       @songs = Song.all.true?
     end

@@ -27,4 +27,8 @@ RSpec.describe Musician, type: :model do
     expect(Musician.order_name.first).to eq @musician_2
     expect(Musician.order_name.last).to eq @musician_1
   end
+
+  it 'can limit by age' do
+    expect(Musician.age_check(30)).to eq([@musician_2])
+  end
 end

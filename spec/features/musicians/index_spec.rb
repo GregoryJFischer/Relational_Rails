@@ -112,6 +112,19 @@ RSpec.describe 'Musicians Index' do
 
         expect(page).to have_button("Delete")
       end
+
+      it 'can limit results by age' do
+        visit "/musicians"
+
+        expect(page).to have_content("Limit to Musicians Over Age:")
+
+        fill_in "Limit to Musicians Over Age:", with: "50"
+
+        click_button("Limit")
+
+        expect(page).to have_content("Bob")
+        expect(page).to_not have_content("Nancy Drew")
+      end
     end
   end
 end
