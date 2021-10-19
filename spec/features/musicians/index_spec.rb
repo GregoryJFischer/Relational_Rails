@@ -10,6 +10,10 @@ RSpec.describe 'Musicians Index' do
                                   hirable:      true,
                                   age:          22,
                                   orchestra_id: @orchestra.id)
+    @musician_2 = Musician.create(name: "Bob",
+                                  hirable: true,
+                                  age: 80,
+                                  orchestra_id: @orchestra.id)
   end
 
   describe 'as a visitor' do
@@ -54,10 +58,17 @@ RSpec.describe 'Musicians Index' do
         visit '/musicians'
 
         click_button('Delete', match: :first)
+        click_button('Delete', match: :first)
 
         expect(current_path).to eq("/musicians")
         expect(current_path).to_not have_content(@musician_1.name)
         expect(page).to_not have_button('Delete')
+      end
+
+      it 'can order by name' do
+        visit "/musicians?order=true"
+
+        expect("Bob").to appear_before("Nancy Drew")
       end
 
       it '#attributes' do
