@@ -10,4 +10,8 @@ class Musician < ApplicationRecord
   def self.order_name
     Musician.order(:name)
   end
+
+  def self.age_check(input)
+    Musician.where("age > #{input}")
+  end
 end
