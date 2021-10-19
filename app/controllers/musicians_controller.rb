@@ -2,6 +2,8 @@ class MusiciansController < ApplicationController
   def index
     if params[:order] == "true"
       @musicians = Musician.order_name.true?
+    elsif params[:age_limit] != nil
+      @musicians = Musician.age_check(params[:age_limit])
     else
       @musicians = Musician.all.true?
     end

@@ -10,7 +10,7 @@
   <a href="/songs?order=true">Sort by Name</a>
 </nav><br/>
 
-<%= form_with url: "/songs?modern=true", method: :get, local: true do |form| %>
+<%= form_with url: "/songs", method: :get, local: true do |form| %>
   <%= form.label :year, "Limit Results to More Recent than Year:"%>
   <%= form.text_field :year %>
   <%= form.submit "Limit" %>

@@ -10,6 +10,11 @@
   <a href="/musicians?order=true">Sort by Name</a>
 </nav><br/>
 
+<%= form_with url: "/musicians", method: :get, local: true do |form| %>
+  <%= form.label :age_limit, "Limit to Musicians Over Age:" %>
+  <%= form.text_field :age_limit %>
+  <%= form.submit "Limit" %>
+<% end %>
 
 <% @musicians.each do |musician| %>
   <a href="/musicians/<%= musician.id %>"><%= musician.name %></a> |
