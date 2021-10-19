@@ -42,6 +42,7 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda-matchers', '~> 4.0'
   gem 'simplecov'
+  gem 'orderly'
 end
 
 group :development do

@@ -10,6 +10,10 @@ RSpec.describe 'Songs Index' do
                          public_domain: true,
                          year_composed: 1800,
                          composer_id:   @composer.id)
+    @song_2 = Song.create(name: "Second Song",
+                          public_domain: true,
+                          year_composed: 1600,
+                          composer_id: @composer.id)
   end
 
   describe 'as a visitor' do
@@ -54,10 +58,17 @@ RSpec.describe 'Songs Index' do
         visit '/songs'
 
         click_button('Delete', match: :first)
+        click_button('Delete', match: :first)
 
         expect(current_path).to eq("/songs")
         expect(current_path).to_not have_content(@song_1.name)
         expect(page).to_not have_button('Delete')
+      end
+
+      it 'shows songs in order of name with params' do
+        visit "/songs?order=true"
+
+        expect("Second Song").to appear_before("Symphony No. 1 in C")
       end
 
       it '#attributes' do
